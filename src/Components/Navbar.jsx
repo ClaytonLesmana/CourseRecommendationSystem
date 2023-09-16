@@ -5,7 +5,6 @@ import Logo from "../assets/Logo.png";
 
 function Navbar() {
   const navRef = useRef();
-
   const showNavbar = () => {
     navRef.current.classList.toggle("responsive_nav");
   };
