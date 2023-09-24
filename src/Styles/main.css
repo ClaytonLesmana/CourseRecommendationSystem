@@ -85,21 +85,25 @@ nav {
 
 .course-matcher-container {
     display: flex;
-    height: 100vh;  /* This ensures the container takes up the full height of the viewport */
+    height: 90vh;  /* This ensures the container takes up the full height of the viewport */
     width: 100%;   /* This ensures the container takes up the full width of the viewport */
-    overflow: hidden;  /* Prevents any overflow from child elements */
+    overflow: hidden; /* Prevents any overflow from child elements */
 }
+	
 
 .questions-section {
     flex: 1;
     padding: 20px;
     background-color: #fFCD80;  /* Light blue color for questions section */
-    overflow-y: auto;  /* Allows scrolling if content exceeds the height */
+    overflow-y: auto; /* Allows scrolling if content exceeds the height */
 	display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     padding: 3.5rem 2rem;
+	flex-direction: column; /* Stack children vertically */
+    /* justify-content: flex-start; Align children to the top */
+    padding-top: 20px; /* Add some padding to the top */
     text-align: center;
 }
 
@@ -114,7 +118,50 @@ nav {
     position: relative;
     padding: 3.5rem 2rem;
     text-align: center;
+	flex-direction: column; /* Stack children vertically */
+    gap: 20px; /* Add some gap between buttons */
 }
+
+.button-questionaire{
+	/* box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75); */
+	width: 100%;
+	height: 75px;
+	font-size: 16px;
+	color: #000;
+	font-weight: 550;
+	background-color: #ffffff;
+	/* border-radius: 15px; */
+	display: flex;
+	padding: 20px 30px 20px;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+	/* border: 5px solid #234668; */
+	/* cursor: pointer; */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+/* .score-section{
+	display: flex;
+	justify-content: center;
+    font-weight: 700;
+} */
+
+.question-count{
+	position: absolute;
+	top: 20px; /* Adjust this value as needed */
+    left: 50%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Shift the element left by half its width to truly center it */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add some margin to the bottom */
+	font-weight: 700;
+	font-size: 25px;
+}
+
+/* .question-count span {
+	font-size
+} */
 
 
 @media only screen and (max-width: 1200px) {
