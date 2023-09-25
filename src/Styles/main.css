@@ -85,7 +85,7 @@ nav {
 
 .course-matcher-container {
     display: flex;
-    height: 90vh;  /* This ensures the container takes up the full height of the viewport */
+    height: 92vh;  /* This ensures the container takes up the full height of the viewport */
     width: 100%;   /* This ensures the container takes up the full width of the viewport */
     overflow: hidden; /* Prevents any overflow from child elements */
 }
@@ -123,22 +123,33 @@ nav {
 }
 
 .button-questionaire{
-	/* box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75); */
-	width: 100%;
+	width: 85%;
 	height: 75px;
-	font-size: 16px;
+	font-size: 20px;
 	color: #000;
 	font-weight: 550;
 	background-color: #ffffff;
-	/* border-radius: 15px; */
 	display: flex;
 	padding: 20px 30px 20px;
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
-	/* border: 5px solid #234668; */
-	/* cursor: pointer; */
     margin: 0 auto; /* Center the button horizontally */
+	border: 1px solid rgba(0, 0, 0, 0.1); /* Add a subtle border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 5px; /* Slight rounded corners */
+}
+
+.button-questionaire:hover {
+    background-color: #f1f1f1; /* Slightly darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+}
+
+.button-questionaire:active {
+    transform: translateY(1px); /* Slight press down effect on active */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* Decrease shadow on active */
 }
 
 /* .score-section{
