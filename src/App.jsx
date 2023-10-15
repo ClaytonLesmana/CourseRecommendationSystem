@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import CourseMatcher from "./Pages/CourseMatcher";
-import Courses from "./Pages/Courses";
+import Courses from "./Courses";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 

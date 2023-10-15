@@ -1,0 +1,426 @@
+
+--create tables 
+
+create table Student(       
+    Stu_Num smallint(8),  --pk (primary key)
+    Stu_Surname text, 
+    stu_Middle_Name text,
+    stu_First_Name text,
+    stu_DOB date, 
+    Stu_Award text, 
+    stu_Address_First text,
+    stu_Address_Second text, 
+    stu_City text, 
+    Stu_Post_code smallint(4),
+    --stu_GPA Decimal, --Later implementation 
+    stu_course_Num1 smallint(6),
+    Stu_course_Num2 smallint(6),
+    Stu_Faculty_Num1 smallint(6),
+    Stu_Faculty_Num2 smallint(6)
+
+); 
+
+
+create table Mark(
+    Stu_Num smallint(8),  --pk (primary key)
+    Surname text, 
+    course_Num1 smallint(6),
+    subject_number smallint(6),
+    subject_name text, 
+    subject_mark smallint(3)
+);
+
+create table course(
+    course_num smallint(6),     --pk
+    course_name text,
+    faculty_number smallint(6),
+    subject_number smallint(6),
+    subject_name text
+); 
+
+create table subject(
+    subject_number smallint(6), --pk
+    subject_name text,
+    faculty_number smallint(6),
+    faculty_name text, 
+    units smallint(2)
+); 
+
+create table faculty(
+    faculty_number smallint(6), --pk 
+    faculty_name text, 
+    staff_number smallint(6), 
+    staff_honorific text, 
+    staff_surname text, 
+    staff_first_Name text, 
+    subject_num smallint(6), 
+    subject_name text
+); 
+
+create table staff(
+    staff_number smallint(6), --pk
+    staff_surname text,
+    staff_honorific text, 
+    staff_first_Name text, 
+    staff_middle_name text,
+    staff_DOB date, 
+    faculty_number smallint(6),
+    faculty_name text, 
+    faculty_Award text
+); 
+
+create table award(
+    award_Number smallint(8), 
+    award_Name text, 
+    award_ranking smallint(4)
+); 
+
+--Student table: 
+
+--Stu_Num smallint(8),  Stu_Surname text, stu_Middle_Name text, stu_First_Name text,stu_DOB date, Stu_Award text, stu_Address_First text, stu_Address_Second text, stu_City text, Stu_Post_code smallint(4), stu_course_Num1 smallint(6),Stu_course_Num2 smallint(6), Stu_Faculty_Num1 smallint(6), Stu_Faculty_Num2 smallint(6)
+
+insert into Student values(10000001, 'MacIninery', 'Harry', 'Robert', '2000-08-01','Diploma Electrical Engineering','','100 Broadway','Ultimo',2007,000102,100111,000000,00000); 
+Insert into student values(12345678, 'Smith', 'Michael', 'John', '1999-07-03', 'Higher School Certificate', 'Unit 1', '56 Wattle Street', 'Ultimo', 2007, 654321, 100111, 000000, 000000);
+
+ --Mark table:
+
+insert into Mark values(10000001, 'MacIninery', 000102, 300101, 'Machine learning');  
+
+
+--Course table:
+
+insert into course values(000102, 'Software Engineering', 300000, 300101, 'Machine learning'); 
+insert into course values(000102, 'Software Engineering', 300000, 100001, 'Mathematics 1'); 
+insert into course values(000102, 'Software Engineering', 300000, 100002, 'Mathematics 2');
+insert into course values(000102, 'Software Engineering', 300000, 100020, 'Cryptography'); 
+insert into course values(000102, 'Software Engineering', 300000, 100022, 'Writing skills'); 
+insert into course values(000102, 'Software Engineering', 300000, 100025, 'Creative writing'); 
+insert into course values(000102, 'Software Engineering', 300000, 100026, 'Grammar'); 
+insert into course values(000102, 'Software Engineering', 300000, 100031, 'Communication'); 
+insert into course values(000102, 'Software Engineering', 300000, 100032, 'Public speaking'); 
+insert into course values(000102, 'Software Engineering', 300000, 100033, 'Critical Thinking'); 
+insert into course values(000102, 'Software Engineering', 300000, 100037, 'Drama'); 
+insert into course values(000102, 'Software Engineering', 300000, 100039, 'Journalism'); 
+insert into course values(000102, 'Software Engineering', 300000, 100040, 'Technical Writing'); 
+insert into course values(000102, 'Software Engineering', 300000, 100041, 'Programming fundamentals'); 
+insert into course values(000102, 'Software Engineering', 300000, 100042, 'Data structures and Algorithms'); 
+insert into course values(000102, 'Software Engineering', 300000, 100044, 'Computer Architecture'); 
+insert into course values(000102, 'Software Engineering', 300000, 100045, 'Operating Systems'); 
+insert into course values(000102, 'Software Engineering', 300000, 100047, 'Database Fundamentals'); 
+insert into course values(000102, 'Software Engineering', 300000, 100048, 'Web development'); 
+insert into course values(000102, 'Software Engineering', 300000, 100049, 'Artificial Intelligence'); 
+insert into course values(000102, 'Software Engineering', 300000, 100051, 'Cybersecurity'); 
+insert into course values(000102, 'Software Engineering', 300000, 100052, 'Computer Networking'); 
+insert into course values(000102, 'Software Engineering', 300000, 100053, 'Human-Computer interaction'); 
+insert into course values(000102, 'Software Engineering', 300000, 100054, 'computer graphics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100055, 'Mobile application development'); 
+insert into course values(000102, 'Software Engineering', 300000, 100056, 'Data Science'); 
+insert into course values(000102, 'Software Engineering', 300000, 100057, 'Cloud computing'); 
+insert into course values(000102, 'Software Engineering', 300000, 100058, 'Quantum Computing'); 
+insert into course values(000102, 'Software Engineering', 300000, 100059, 'Ethical Hacking'); 
+insert into course values(000102, 'Software Engineering', 300000, 100068, 'Art Appreciation'); 
+insert into course values(000102, 'Software Engineering', 300000, 100069, 'General Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100070, 'Organic Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100071, 'Inorganic Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100072, 'Physical Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100073, 'Analytical chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100074, 'Biochemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100075, 'Environmental chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100076, 'Medicinal Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100077, 'Polymer Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100078, 'Nanotechnology'); 
+insert into course values(000102, 'Software Engineering', 300000, 100079, 'Quantum Technology'); 
+insert into course values(000102, 'Software Engineering', 300000, 100080, 'Forensic Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100081, 'Food Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100082, 'Materials science'); 
+insert into course values(000102, 'Software Engineering', 300000, 100083, 'Green chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100084, 'Industrial Chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100085, 'Petrochemicals'); 
+insert into course values(000102, 'Software Engineering', 300000, 100086, 'Electrochemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100087, 'Surface chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100088, 'Computational chemistry'); 
+insert into course values(000102, 'Software Engineering', 300000, 100089, 'Renaissance Art'); 
+insert into course values(000102, 'Software Engineering', 300000, 100090, 'Baroque Art'); 
+insert into course values(000102, 'Software Engineering', 300000, 100091, 'Modern Art'); 
+insert into course values(000102, 'Software Engineering', 300000, 100092, 'Contemporary Art'); 
+insert into course values(000102, 'Software Engineering', 300000, 100093, 'Sculpture'); 
+insert into course values(000102, 'Software Engineering', 300000, 100094, 'Painting'); 
+insert into course values(000102, 'Software Engineering', 300000, 100095, 'Architecture'); 
+insert into course values(000102, 'Software Engineering', 300000, 100096, 'Photography'); 
+insert into course values(000102, 'Software Engineering', 300000, 100106, 'Mechanical Fundamentals'); 
+insert into course values(000102, 'Software Engineering', 300000, 100107, 'Electromagnetism'); 
+insert into course values(000102, 'Software Engineering', 300000, 100108, 'Thermodynamics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100109, 'Quantum mechanics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100110, 'Astrophysics');
+insert into course values(000102, 'Software Engineering', 300000, 100111, 'Relativity'); 
+insert into course values(000102, 'Software Engineering', 300000, 100112, 'Nuclear physics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100113, 'Optics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100114, 'Acoustics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100115, 'Solid State Physics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100116, 'Plasma Physics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100117, 'Fluid Mechanics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100118, 'Biophysics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100119, 'Geophysics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100120, 'High Energy Physics'); 
+insert into course values(000102, 'Software Engineering', 300000, 100121, 'Particle Physics'); 
+
+insert into course values(000103, 'Mechanical Engineering', 300000, 300101, 'Machine learning'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100001, 'Mathematics 1'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100002, 'Mathematics 2');
+insert into course values(000103, 'Mechanical Engineering', 300000, 100020, 'Cryptography'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100022, 'Writing skills'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100025, 'Creative writing'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100026, 'Grammar'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100031, 'Communication'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100032, 'Public speaking'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100033, 'Critical Thinking'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100037, 'Drama'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100039, 'Journalism'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100040, 'Technical Writing'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100041, 'Programming fundamentals'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100042, 'Data structures and Algorithms'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100044, 'Computer Architecture'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100045, 'Operating Systems'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100047, 'Database Fundamentals'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100048, 'Web development'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100049, 'Artificial Intelligence'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100051, 'Cybersecurity'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100052, 'Computer Networking'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100053, 'Human-Computer interaction'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100054, 'computer graphics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100055, 'Mobile application development'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100056, 'Data Science'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100057, 'Cloud computing'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100058, 'Quantum Computing'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100059, 'Ethical Hacking'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100068, 'Art Appreciation'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100069, 'General Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100070, 'Organic Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100071, 'Inorganic Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100072, 'Physical Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100073, 'Analytical chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100074, 'Biochemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100075, 'Environmental chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100076, 'Medicinal Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100077, 'Polymer Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100078, 'Nanotechnology'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100079, 'Quantum Technology'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100080, 'Forensic Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100081, 'Food Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100082, 'Materials science'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100083, 'Green chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100084, 'Industrial Chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100085, 'Petrochemicals'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100086, 'Electrochemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100087, 'Surface chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100088, 'Computational chemistry'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100089, 'Renaissance Art'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100090, 'Baroque Art'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100091, 'Modern Art'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100092, 'Contemporary Art'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100093, 'Sculpture'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100094, 'Painting'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100095, 'Architecture'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100096, 'Photography'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100106, 'Mechanical Fundamentals'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100107, 'Electromagnetism'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100108, 'Thermodynamics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100109, 'Quantum mechanics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100110, 'Astrophysics');
+insert into course values(000103, 'Mechanical Engineering', 300000, 100111, 'Relativity'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100112, 'Nuclear physics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100113, 'Optics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100114, 'Acoustics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100115, 'Solid State Physics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100116, 'Plasma Physics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100117, 'Fluid Mechanics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100118, 'Biophysics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100119, 'Geophysics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100120, 'High Energy Physics'); 
+insert into course values(000103, 'Mechanical Engineering', 300000, 100121, 'Particle Physics'); 
+
+
+
+
+
+
+
+
+ 
+
+--subject table:
+
+insert into subject values(300101, 'Machine learning', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100001, 'Mathematics 1', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100002, 'Mathematics 2', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100020, 'Cryptography', 200000, 'Mathematics and Science', '6');  
+Insert into subject values(100022, 'Writing skills', 100000, 'School of Business', '6'); 
+Insert into subject values(100025, 'Creative writing', 100000, 'School of Business', '6');
+Insert into subject values(100026, 'Grammar', 100000, 'School of Business', '6');
+Insert into subject values(100031, 'Communication', 100000, 'School of Business', '6');
+Insert into subject values(100032, 'Public speaking', 100000, 'School of Business', '6');
+Insert into subject values(100033, 'Critical Thinking', 100000, 'School of Business', '6'); 
+Insert into subject values(100037, 'Drama', 400000, 'Facility of Arts and social sciences', '6'); 
+Insert into subject values(100039, 'Journalism', 400000, 'Facility of Arts and social sciences', '6'); 
+Insert into subject values(100040, 'Technical Writing', 400000, 'Facility of Arts and social sciences', '6'); 
+Insert into subject values(100041, 'Programming fundamentals', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100042, 'Data structures and Algorithms', 300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100044, 'Computer Architecture', 300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100045, 'Operating Systems', 300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100047, 'Database Fundamentals', 300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100048, 'Web development', 300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100049, 'Artificial Intelligence', 300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100051, 'Cybersecurity', 300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100052, 'Computer Networking', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100053, 'Human-Computer interaction', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100054, 'computer graphics', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100055, 'Mobile application development', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100056, 'Data Science', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100057, 'Cloud computing', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100058, 'Quantum Computing', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100059, 'Ethical Hacking', 300000, 'Facility of Engineering and IT', '6'); 
+Insert into subject values(100068, 'Art Appreciation', 400000, 'Facility of Arts and social sciences', '6'); 
+Insert into subject values(100069, 'General Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100070, 'Organic Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100071, 'Inorganic Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100072, 'Physical Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100073, 'Analytical chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100074, 'Biochemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100075, 'Environmental chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100076, 'Medicinal Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100077, 'Polymer Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100078, 'Nanotechnology', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100079, 'Quantum Technology', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100080, 'Forensic Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100081, 'Food Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100082, 'Materials science', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100083, 'Green chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100084, 'Industrial Chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100085, 'Petrochemicals', 200000, 'Mathematics and Science', '6');
+Insert into subject values(100086, 'Electrochemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100087, 'Surface chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100088, 'Computational chemistry', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100089, 'Renaissance Art', 400000, 'Facility of Arts and social sciences', '6');
+Insert into subject values(100090, 'Baroque Art', 400000, 'Facility of Arts and social sciences', '6');
+Insert into subject values(100091, 'Modern Art', 400000, 'Facility of Arts and social sciences', '6');
+Insert into subject values(100092, 'Contemporary Art', 400000, 'Facility of Arts and social sciences', '6');
+Insert into subject values(100093, 'Sculpture', 400000, 'Facility of Arts and social sciences', '6');
+Insert into subject values(100094, 'Painting', 400000, 'Facility of Arts and social sciences', '6');
+Insert into subject values(100095, 'Architecture', 500000, 'Faculty of Design, Architecture and Building, '6'); 
+Insert into subject values(100096, 'Photography',  500000, 'Faculty of Design, Architecture and Building, '6'); 
+Insert into subject values(100106, 'Mechanical Fundamentals',  300000, 'Facility of Engineering and IT', '6');
+Insert into subject values(100107, 'Electromagnetism', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100108, 'Thermodynamics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100109, 'Quantum mechanics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100110, 'Astrophysics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100111, 'Relativity', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100112, 'Nuclear physics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100113, 'Optics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100114, 'Acoustics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100115, 'Solid State Physics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100116, 'Plasma Physics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100117, 'Fluid Mechanics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100118, 'Biophysics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100119, 'Geophysics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100120, 'High Energy Physics', 200000, 'Mathematics and Science', '6'); 
+Insert into subject values(100121, 'Particle Physics', 200000, 'Mathematics and Science', '6'); 
+
+
+
+
+
+
+--Faculty table:
+
+insert into faculty values(300000, 'Engineering and IT', 800888, 'Dr','Who','Fred', 300101, 'Machine learning'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800100, 'Dr', 'Leonhard', 'Euler', 100001, 'Mathematics 1'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800101, 'Dr', 'Harald', 'Bohr', 100002, 'Mathematics 2'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800102, 'Dr', 'Leone', 'Alberti', '100020, 'Cryptography');   
+Insert into faculty values(500000, 'Faculty of Design, Architecture and Building,
+Insert into faculty values(400000, 'Facility of Arts and social sciences'
+Insert into faculty values(100000, 'School of Business', 800103, 'Dr', 'Jeffery', 'Deaver',  100022,'Writing skills'); 
+Insert into faculty values(100000, 'School of Business', 800104, 'Dr', 'Terry', 'Pratchet', 100025, 'Creative writing'); 
+Insert into faculty values(100000, 'School of Business', 800105, 'Dr', 'John', 'Tolkien', 100026, 'Grammar'); 
+Insert into faculty values(100000, 'School of Business', 800106, 'Dr', 'Martin', 'King', 100031, 'Communication'); 
+Insert into faculty values(100000, 'School of Business', 800106, 'Dr', 'Martin', 'King', 100032, 'Public speaking'); 
+Insert into faculty values(100000, 'school of business', 800107, 'Dr', 'William', 'Ponder', 100033, 'Critical Thinking'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800108, 'Dr', 'Hugh', 'Jackman', 100037, 'Drama'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800109, 'Dr', 'Kitty', 'Flanagan', 100039, 'Journalism'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800110, 'Dr', 'Philip', 'Dull', 100040, 'Technical Writing'); 
+Insert into faculty values(300000, 'Engineering and IT', 800111, 'Dr', 'Bill', 'Joy', 100041, 'Programming fundamentals'); 
+Insert into faculty values(300000, 'Engineering and IT', 800112, 'Dr', 'Bjarne', 'Stroustrup', 100042, 'Data structures and Algorithms'); 
+Insert into faculty values(300000, 'Engineering and IT', 800113, 'Dr', 'Charles','Babbage', 100044, 'Computer Architecture'); 
+Insert into faculty values(300000, 'Engineering and IT', 800114, 'Dr', 'Joseph','Wilson',100045, 'Operating Systems');
+Insert into faculty values(300000, 'Engineering and IT', 800115, 'Dr', 'Charles','Bachman',100047, 'Database Fundamentals'); 
+Insert into faculty values(300000, 'Engineering and IT', 800116, 'Dr', 'Bob','Kahn', 100048, 'Web development');
+Insert into faculty values(300000, 'Engineering and IT', 800117, 'Dr', 'Alan','Turing', 100049, 'Artificial Intelligence');
+Insert into faculty values(300000, 'Engineering and IT', 800118, 'Dr', 'Colin ', 'Hacker', 100051, 'Cybersecurity'); 
+Insert into faculty values(300000, 'Engineering and IT', 800119, 'Dr', 'Vint','Nerf', 100052, 'Computer Networking'); 
+Insert into faculty values(300000, 'Engineering and IT', 800120, 'Dr', 'Susan','Calvin', 100053, 'Human-Computer interaction'); 
+Insert into faculty values(300000, 'Engineering and IT', 800121, 'Dr', 'Lara', 'Croft', 100054, 'computer graphics'); 
+Insert into faculty values(300000, 'Engineering and IT', 800122, 'Dr', 'Samus' , 'Aran', 100055, 'Mobile application development'); 
+Insert into faculty values(300000, 'Engineering and IT', 800123, 'Dr', 'Jill','Valentine', 100056, 'Data Science'); 
+Insert into faculty values(300000, 'Engineering and IT', 800124, 'Dr', 'Joseph','Licklider', 100057, 'Cloud computing');
+Insert into faculty values(300000, 'Engineering and IT', 800125, 'Dr', 'Isaac','Chuang', 100058, 'Quantum Computing'); 
+Insert into faculty values(300000, 'Engineering and IT', 800126, 'Dr', 'John','Patrick', 100059,'Ethical Hacking'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800127, 'Dr', 'Percy', 'Baroque', 100068, 'Art Appreciation'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800128, 'Dr', 'John', 'Dalton', 100069, 'General Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800129, 'Dr', 'Robert', 'Boyle', 100070, 'Organic Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800130, 'Dr', 'Robert', 'Robinson', 100071, 'Inorganic Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800131, 'Dr', 'Louis', 'Pasteur', 100072, 'Physical Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800132, 'Dr', 'Antoine', 'Lavoisier', 100073, 'Analytical chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800133, 'Dr', 'Herbert', 'Brown', 100074, 'Biochemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800134, 'Dr', 'Emil', 'Fischer', 100075, 'Environmental chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800135, 'Dr', 'Elias', 'Corey', 100076, 'Medicinal Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800136, 'Dr', 'Jons', 'Berzelius', 100077, 'Polymer Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800137, 'Dr', 'Derek', 'Barton', 100078, 'Nanotechnology'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800138, 'Dr', 'Adolf', 'von Baeyer', 100079, 'Quantum Technology'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800139, 'Dr', 'August', 'Kekule', 100080, 'Forensic Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800140, 'Dr', 'Linus', 'Pauling', 100081, 'Food Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800141, 'Dr', 'Albert', 'Hofmann', 100082, 'Materials science'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800142, 'Dr', 'Joseph', 'Priestley', 100083, 'Green chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800143, 'Dr', 'Justus', 'von Liebig', 100084, 'Industrial Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800144, 'Dr', 'Friedrich', 'Kohler', 100085, 'Petrochemicals'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800145, 'Dr', 'Herman', 'Staudinger', 100086, 'Electrochemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800146, 'Dr', 'Carl', 'Bosch', 100087, 'Surface chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800147, 'Dr', 'Stephen', 'Buchwald', 100088, 'Computational chemistry'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800148, 'Dr', 'Leonardo ', 'da Vinci', 100089, 'Renaissance Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800149, 'Dr', 'Peter', 'Rubens', 100090, 'Baroque Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800150, 'Dr', 'Jackson' , 'Pollock', 100091, 'Modern Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800151, 'Dr', 'Keith', 'Haring', 100092, 'Contemporary Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800152, 'Dr', 'Constantin', 'Brancusi', 100093, 'Sculpture'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800153, 'Dr', 'Salvador', 'Dali', 100094, 'Painting'); 
+Insert into faculty values(500000, 'Faculty of Design, Architecture and Building, 800154, 'Dr', 'Frank ', 'Lloyd Wright', 100095, 'Architecture'); 
+Insert into faculty values(500000, 'Faculty of Design, Architecture and Building, 800155, 'Dr', 'Dorothea', 'Lange', 100096, 'Photography'); 
+Insert into faculty values(300000, 'Facility of Engineering and IT', 800156, 'Dr', 'George', 'Stephenson', 100106, 'Mechanical Fundamentals'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'James','Maxwell', 100107, 'Electromagnetism'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Max','Planck', 100108, 'Thermodynamics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Erwin','Schrödinger', 100109, 'Quantum mechanics');
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Brian','May', 100110, 'Astrophysics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Albert','Einstein', 100111, 'Relativity'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Robert','Oppenheimer', 100112, 'Nuclear physics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Christiaan','Huygens', 100113, 'Optics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Wallace','Sabine', 100114, 'Acoustics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Charles','Kittel', 100115, 'Solid State Physics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Daniel','Bernoulli', 100117, 'Fluid Mechanics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Francis','Crick', 100118, 'Biophysics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Wolfgang','Pauli', 100120, 'High Energy Physics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Wilhwelm','Wien', 100121, 'Particle Physics'); 
+
+
+
+
+
+
+
+
+
+--staff table:
+
+insert into staff values(800888, 'Who', 'Dr', 'Fred', 'Clarence', '1904-10-31', 300000, 'Engineering and IT', 'Professor'); 
+
+--award table:
+
+insert into award values(18001200, 'Professor', '1'); 
+
+
