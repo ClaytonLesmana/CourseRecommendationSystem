@@ -4,7 +4,7 @@ import sqlite3 from 'sqlite3';
 const app = express();
 
 // Connect to the SQLite database
-const db = new sqlite3.Database('Student.db');
+const db = new sqlite3.Database('../Data/Student.db');
 
 // Define an API endpoint to retrieve course data
 app.get('/courses', (_, res) => {
@@ -20,7 +20,14 @@ app.get('/courses', (_, res) => {
     }
     console.log('Received course data:', rows);
 
-    res.json({ courses: rows });
+    try {
+      const jsonData = JSON.stringify({ courses: rows });
+      // If parsing is successful, send it as JSON
+      res.json(JSON.parse(jsonData));
+    } catch (jsonError) {
+      // If parsing fails, send an error response
+      res.status(500).json({ error: 'Invalid JSON data' });
+    }
   });
 });
 
