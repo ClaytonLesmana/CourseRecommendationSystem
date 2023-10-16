@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ProgressRoot{
+  width: 1200px;
+  position: absolute;
+  /* align-items: center; */
+  margin-top: 100px;
+}
+
+
+
+
+.circle-1{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  display: flex;
+  position: absolute;
+  margin-top: 100px;
+  margin-right: 1200px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 1000; 
+}
+.circle-2{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  margin-top: 100px;
+  margin-right: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 1000; 
+}
+.circle-3{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  margin-top: 100px;
+  margin-right: -400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 1000; 
+}
+.circle-4{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  margin-top: 100px;
+  margin-right: -1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 1000; 
+}

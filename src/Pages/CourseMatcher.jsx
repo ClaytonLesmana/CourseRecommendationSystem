@@ -1,49 +1,21 @@
 import React, { useState } from "react";
 import { ScrollRestoration } from "react-router-dom";
 import "../Styles/main.css";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Select, Input } from "@mantine/core";
+import { Button } from "bootstrap";
 function CourseMatcher() {
-  const questions = [
-    {
-      questionText: "What's your programming personality?",
-      answerOptions: [
-        { answerText: "New York", isCorrect: false },
-        { answerText: "London", isCorrect: false },
-        { answerText: "Paris", isCorrect: true },
-        { answerText: "Dublin", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "Who is CEO of Tesla?",
-      answerOptions: [
-        { answerText: "Jeff Bezos", isCorrect: false },
-        { answerText: "Elon Musk", isCorrect: true },
-        { answerText: "Bill Gates", isCorrect: false },
-        { answerText: "Tony Stark", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "The iPhone was created by which company?",
-      answerOptions: [
-        { answerText: "Apple", isCorrect: true },
-        { answerText: "Intel", isCorrect: false },
-        { answerText: "Amazon", isCorrect: false },
-        { answerText: "Microsoft", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "1", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "6", isCorrect: false },
-        { answerText: "7", isCorrect: true },
-      ],
-    },
-  ];
-
   const [currentQuestion, setCurrentQuestion] = useState(0);
-
   const [showScore, setShowScore] = useState(false);
+  const navigate = useNavigate();
+  const [selectedMajor, setSelectedMajor] = useState("");
+  const [creditPoints, setCreditPoints] = useState(0);
+  const handleNavigation = () => {
+    navigate("/CourseMatcherOutput", {
+      state: { selectedMajor, creditPoints },
+    });
+  };
 
   const [score, setScore] = useState(0);
   const handleAnswerButtonClick = (isCorrect) => {
@@ -58,12 +30,88 @@ function CourseMatcher() {
       setShowScore(true);
     }
   };
+  const questions = [
+    {
+      questionText: "What faculty are you in?",
+      answerOptions: [
+        { answerText: "New York", isCorrect: false },
+        { answerText: "London", isCorrect: false },
+        { answerText: "Paris", isCorrect: true },
+        { answerText: "Dublin", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Which major are you in?",
+      answerOptions: [],
+      component: (
+        <>
+          <div>
+            <Select
+              label=""
+              placeholder="Your Major"
+              data={[
+                "Biomedical Engineering",
+                "Civil Engineering",
+                "Civil and Enviromental Engineering",
+                "Data Science Engineering",
+                "Electrical Engineering",
+                "Electronic Engineering",
+                "Mechanical Engineering",
+                "Mechanical and Mechatronic Engineering",
+                "Mechatronic Engineering",
+                "Software Engineering",
+                "Electrical and Electronic Engineering",
+                "Flexible Engineering",
+                "Renewable Energy Engineering",
+                "Chemical Process Engineering",
+              ]}
+              className="dropdown"
+              onChange={(value) => setSelectedMajor(value)}
+            />
+            <button
+              onClick={handleAnswerButtonClick}
+              className="button-questionaire-custom"
+            >
+              Continue
+            </button>
+          </div>
+        </>
+      ),
+    },
+    {
+      questionText: "Whats your Current Credit Rating?",
+      answerOptions: [],
+      component: (
+        <>
+          <div>
+            <Input
+              placeholder="Input component"
+              onChange={(e) => setCreditPoints(e.target.value)}
+            />
+            ;
+            <button
+              onClick={handleAnswerButtonClick}
+              className="button-questionaire-custom"
+            >
+              Continue
+            </button>
+          </div>
+        </>
+      ),
+    },
+    {
+      questionText: "Whats your expected Workload:?",
+      answerOptions: [
+        { answerText: "Part-time", isCorrect: false },
+        { answerText: "Full-time", isCorrect: false },
+      ],
+    },
+  ];
+
   return (
     <div className="course-matcher-container">
       {showScore ? (
-        <div className="score-sction">
-          You scored {score} out of {questions.length}
-        </div>
+        <div className="score-sction">{handleNavigation()}</div>
       ) : (
         <>
           <div className="questions-section">
@@ -76,14 +124,21 @@ function CourseMatcher() {
           </div>
 
           <div className="answers-section">
-            {questions[currentQuestion].answerOptions.map((answerOptions) => (
-              <button
-                onClick={() => handleAnswerButtonClick(answerOptions.isCorrect)}
-                className="button-questionaire"
-              >
-                {answerOptions.answerText}
-              </button>
-            ))}
+            {questions[currentQuestion].component
+              ? questions[currentQuestion].component
+              : questions[currentQuestion].answerOptions.map(
+                  (answerOption, index) => (
+                    <button
+                      key={index}
+                      onClick={() =>
+                        handleAnswerButtonClick(answerOption.isCorrect)
+                      }
+                      className="button-questionaire"
+                    >
+                      {answerOption.answerText}
+                    </button>
+                  )
+                )}
           </div>
         </>
       )}
