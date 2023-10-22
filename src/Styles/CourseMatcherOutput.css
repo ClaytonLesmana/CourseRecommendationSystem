@@ -8,7 +8,7 @@
   }
   
   .progress-bar-placeholder {
-    width: 1475px;
+    width: 1700px; /*tablet size 1475px*/
     height: 230px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -38,6 +38,12 @@
     margin-left: 110px;
     margin-top: 30px;
     font-weight: 600;
+  }
+
+  .year-header{
+    margin-top:40px;
+    margin-left: 40px ;
+    font-weight: 550;
   }
   .card-container{
     display: flex;

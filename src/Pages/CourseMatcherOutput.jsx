@@ -12,13 +12,17 @@ function CourseMatcherOutput() {
     });
   };
   const location = useLocation();
+  const [currentYear, setCurrentYear] = React.useState(1);
   const { selectedMajor, creditPoints } = location.state || {};
   return (
     <>
       <div className="output-container">
         <div className="progress-bar-placeholder">
           <h2 className="major-header"> {selectedMajor || "Default Major"}</h2>
-          <TimelineProgress creditPoints={creditPoints} />
+          <TimelineProgress
+            creditPoints={creditPoints}
+            setYear={setCurrentYear}
+          />
           <div className="progress-labels-container">
             <h5 className="progress-label-1">Basics</h5>
             <h5 className="progress-label-2">Advance Topics</h5>
@@ -26,7 +30,21 @@ function CourseMatcherOutput() {
           </div>
         </div>
       </div>
-
+      <h2 className="year-header">Year {currentYear}</h2>
+      <div className="card-container">
+        <div className="card">
+          <CardOutput />
+        </div>
+        <div className="card">
+          <CardOutput />
+        </div>
+        <div className="card">
+          <CardOutput />
+        </div>
+        <div className="card">
+          <CardOutput />
+        </div>
+      </div>
       <div className="card-container">
         <div className="card">
           <CardOutput />

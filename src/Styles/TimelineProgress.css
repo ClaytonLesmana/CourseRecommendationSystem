@@ -11,7 +11,10 @@
 }
 
 
-
+.selected {
+  background-color: #3498db; /* Example color */
+  color: white; /* Example text color */
+}
 
 .circle-1{
   width: 50px;
