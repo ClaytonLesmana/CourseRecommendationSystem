@@ -29,7 +29,7 @@
   justify-content: center;
   color: white;
   font-family: Arial, sans-serif;
-  z-index: 1000; 
+  z-index: 800; 
 }
 .circle-2{
   width: 50px;
@@ -44,7 +44,7 @@
   justify-content: center;
   color: white;
   font-family: Arial, sans-serif;
-  z-index: 1000; 
+  z-index: 800; 
 }
 .circle-3{
   width: 50px;
@@ -59,7 +59,7 @@
   justify-content: center;
   color: white;
   font-family: Arial, sans-serif;
-  z-index: 1000; 
+  z-index: 800; 
 }
 .circle-4{
   width: 50px;
@@ -74,5 +74,5 @@
   justify-content: center;
   color: white;
   font-family: Arial, sans-serif;
-  z-index: 1000; 
+  z-index: 800; 
 }
