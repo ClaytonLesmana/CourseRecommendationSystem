@@ -1,13 +1,18 @@
+import sqlite3 from 'sqlite3';
 import express from 'express';
 import cors from 'cors';
-import sqlite3 from 'sqlite3';
-const app = express();
 
+
+const app = express();
+app.use(cors());
 // Connect to the SQLite database
 const db = new sqlite3.Database('Student.db');
 
+
+
+
 // Define an API endpoint to retrieve course data
-app.get('/courses', (_, res) => {
+app.get('/courses', function (req, res, next){
   const query = `
     SELECT DISTINCT course_num, course_name, faculty_number
     FROM course
@@ -24,7 +29,7 @@ app.get('/courses', (_, res) => {
   });
 });
 
-app.use(cors());
+
 // Start the server on a specified port (e.g., 3001)
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
