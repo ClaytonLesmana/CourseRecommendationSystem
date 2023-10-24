@@ -6,7 +6,7 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 // Connect to the SQLite database
-const db = new sqlite3.Database('Student.db');
+const db = new sqlite3.Database('../Data/Student.db');
 
 
 
@@ -25,7 +25,14 @@ app.get('/courses', function (req, res, next){
     }
     console.log('Received course data:', rows);
 
-    res.json({ courses: rows });
+    try {
+      const jsonData = JSON.stringify({ courses: rows });
+      // If parsing is successful, send it as JSON
+      res.json(JSON.parse(jsonData));
+    } catch (jsonError) {
+      // If parsing fails, send an error response
+      res.status(500).json({ error: 'Invalid JSON data' });
+    }
   });
 });
 
