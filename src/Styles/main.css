@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Titillium Web", sans-serif;
+}
+
+.logo-img{
+    width: 180px;
+    height: auto;
+}
+
+.demoOutput-img{
+	width: auto;
+	height: 923.45px;
+}
+
+:root {
+	--mainColor: #fff;
+	--secondaryColor: #ff8a00;
+	--textColor: #000;
+}
+
+body{
+	padding-top: 80px; 
+}
+
+header {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	top: 0;
+    left: 0;
+	justify-content: space-between;
+	height: 80px;
+	padding: 0 2rem;
+	background-color: var(--mainColor);
+	color: var(--textColor);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+	margin: 0 6rem;
+	color: var(--textColor);
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: var(--secondaryColor);
+    font-weight: 500;
+}
+
+header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+header div,
+nav {
+	display: flex;
+	align-items: center;
+}
+.question-text{
+	font-weight: 700;
+    line-height: 1.2;
+    font-size: 4rem;
+    margin: 0;
+    font-size: 2.75rem;
+}
+
+.answer-text{
+	font-weight: 400;
+    line-height: 1.5;
+    font-size: 1rem;
+	color: #fff;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.course-matcher-container {
+    display: flex;
+    height: 92vh;  /* This ensures the container takes up the full height of the viewport */
+    width: 100%;   /* This ensures the container takes up the full width of the viewport */
+    overflow: hidden; /* Prevents any overflow from child elements */
+}
+	
+
+.questions-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fFCD80;  /* Light blue color for questions section */
+    overflow-y: auto; /* Allows scrolling if content exceeds the height */
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 3.5rem 2rem;
+	flex-direction: column; /* Stack children vertically */
+    /* justify-content: flex-start; Align children to the top */
+    padding-top: 20px; /* Add some padding to the top */
+    text-align: center;
+}
+
+.answers-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #ff8800;  /* Light pink color for answers section */
+    overflow-y: auto;  /* Allows scrolling if content exceeds the height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 3.5rem 2rem;
+    text-align: center;
+	flex-direction: column; /* Stack children vertically */
+    gap: 20px; /* Add some gap between buttons */
+}
+
+.button-questionaire{
+	width: 85%;
+	height: 75px;
+	font-size: 20px;
+	color: #000;
+	font-weight: 550;
+	background-color: #ffffff;
+	display: flex;
+	padding: 20px 30px 20px;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+    margin: 0 auto; /* Center the button horizontally */
+	border: 1px solid rgba(0, 0, 0, 0.1); /* Add a subtle border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 5px; /* Slight rounded corners */
+}
+
+.button-questionaire:hover {
+    background-color: #f1f1f1; /* Slightly darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+}
+
+.button-questionaire:active {
+    transform: translateY(1px); /* Slight press down effect on active */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* Decrease shadow on active */
+}
+
+.button-questionaire-custom{
+	width: 150px;
+	height: 70px;
+	font-size: 20px;
+	color: #000;
+	font-weight: 550;
+	background-color: #ffffff;
+	/* display: flex; */
+	padding: 20px 30px 20px;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+    margin-left: 350px;
+	margin-top: 10px;
+	border: 1px solid rgba(0, 0, 0, 0.1); /* Add a subtle border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 5px; /* Slight rounded corners */
+}
+
+.button-questionaire:hover {
+    background-color: #f1f1f1; /* Slightly darker background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Increase shadow on hover */
+}
+
+.button-questionaire:active {
+    transform: translateY(1px); /* Slight press down effect on active */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); /* Decrease shadow on active */
+}
+
+/* .score-section{
+	display: flex;
+	justify-content: center;
+    font-weight: 700;
+} */
+
+.question-count{
+	position: absolute;
+	top: 20px; /* Adjust this value as needed */
+    left: 50%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Shift the element left by half its width to truly center it */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Add some margin to the bottom */
+	font-weight: 700;
+	font-size: 25px;
+}
+
+.dropdown{
+	width: 500px;
+	
+}
+
+/* .question-count span {
+	font-size
+} */
+
+
+@media only screen and (max-width: 1200px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	header nav {
+		position: fixed;
+		top: -100vh;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+	}
+
+	header .responsive_nav {
+		transform: translateY(100vh);
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+}
