@@ -1,0 +1,130 @@
+--Student Database 
+--   V01 September 2023
+--  Susan Monaghan 
+--  Intended to be used to create SQLite3 dB file 
+--  or for data reference.
+--when add to Git hub /dev/Susan 
+
+
+-- **Make sure you are using SQLite 3 or will get error when 
+--     try to read table
+
+sqlite3 Stu_database
+
+--drop (delete) tables that may be existing
+drop table Student; 
+drop table Mark;
+drop table Course;
+drop table subject;
+drop table Faculty;
+drop table staff;
+drop table award; 
+
+
+--create tables 
+
+create table Student(       
+    Stu_Num smallint(8),  --pk (primary key)
+    Stu_Surname text, 
+    stu_Middle_Name text,
+    stu_First_Name text,
+    stu_DOB date, 
+    Stu_Award text, 
+    stu_Address_First text,
+    stu_Address_Second text, 
+    stu_City text, 
+    Stu_Post_code smallint(4),
+    --stu_GPA Decimal, --Later implementation 
+    stu_course_Num1 smallint(6),
+    Stu_course_Num2 smallint(6),
+    Stu_Faculty_Num1 smallint(6),
+    Stu_Faculty_Num2 smallint(6)
+
+); 
+
+
+create table Mark(
+    Stu_Num smallint(8),  --pk (primary key)
+    Surname text, 
+    course_Num1 smallint(6),
+    subject_number smallint(6),
+    subject_name text, 
+    subject_mark smallint(3)
+);
+
+create table course(
+    course_num smallint(6),     --pk
+    course_name text,
+    faculty_number smallint(6),
+    subject_number smallint(6),
+    subject_name text
+); 
+
+create table suject(
+    subject_number smallint(6), --pk
+    subject_name text,
+    faculty_number smallint(6),
+    faculty_name text, 
+    units smallint(2)
+); 
+
+create table faculty(
+    faculty_number smallint(6), --pk 
+    faculty_name text, 
+    staff_number smallint(6), 
+    staff_honorific text, 
+    staff_surname text, 
+    staff_first_Name text, 
+    subject_num smallint(6), 
+    subject_name text
+); 
+
+create table staff(
+    staff_number smallint(6), --pk
+    staff_surname text,
+    staff_honorific text, 
+    staff_first_Name text, 
+    staff_middle_name text,
+    staff_DOB date, 
+    faculty_number smallint(6),
+    faculty_name text, 
+    faculty_Award text
+); 
+
+create table award(
+    award_Number smallint(8), 
+    award_Name text, 
+    award_ranking smallint(4)
+); 
+
+--Student table: 
+
+insert into Student values(10000001, 'MacIninery', 'Harry', 'Robert', '2000-08-01','Diploma Electrical Engineering','abc','100 Broadway','Ultimo',2007,000102,100111,000000,00000);  
+
+ --Mark table:
+
+insert into Mark values(10000001, 'MacIninery', 000102, 300101, 'Machine learning', 100); 
+
+
+Course table:
+
+insert into course values(000102, 'software engineering', 300000, 300101, 'Machine learning'); 
+
+subject table:
+
+insert into course values(300101, 'Machine learning', 300000, 'Engineering and IT', '6'); 
+
+
+--Faculty table:
+
+insert into faculty values(300000, 'Engineering and IT', 800888, 'Dr','Who','Fred', 300101, 'Machine learning'); 
+
+--staff table:
+
+insert into staff values(800888, 'Who', 'Dr', 'Fred', 'Clarence', '1904-10-31', 300000, 'Engineering and IT', 'Professor'); 
+
+--award table:
+
+insert into award values(18001200, 'Professor', '1'); 
+
+
