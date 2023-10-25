@@ -6,7 +6,7 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 // Connect to the SQLite database
-const db = new sqlite3.Database('../Data/Student.db');
+const db = new sqlite3.Database('../Data/Student1.db');
 
 
 

@@ -1,5 +1,5 @@
 
---create tables 
+
 
 create table Student(       
     Stu_Num smallint(8),  --pk (primary key)
@@ -19,16 +19,6 @@ create table Student(
     Stu_Faculty_Num2 smallint(6)
 
 ); 
-
-
-create table Mark(
-    Stu_Num smallint(8),  --pk (primary key)
-    Surname text, 
-    course_Num1 smallint(6),
-    subject_number smallint(6),
-    subject_name text, 
-    subject_mark smallint(3)
-);
 
 create table course(
     course_num smallint(6),     --pk
@@ -57,34 +47,15 @@ create table faculty(
     subject_name text
 ); 
 
-create table staff(
-    staff_number smallint(6), --pk
-    staff_surname text,
-    staff_honorific text, 
-    staff_first_Name text, 
-    staff_middle_name text,
-    staff_DOB date, 
-    faculty_number smallint(6),
-    faculty_name text, 
-    faculty_Award text
-); 
 
-create table award(
-    award_Number smallint(8), 
-    award_Name text, 
-    award_ranking smallint(4)
-); 
 
---Student table: 
 
---Stu_Num smallint(8),  Stu_Surname text, stu_Middle_Name text, stu_First_Name text,stu_DOB date, Stu_Award text, stu_Address_First text, stu_Address_Second text, stu_City text, Stu_Post_code smallint(4), stu_course_Num1 smallint(6),Stu_course_Num2 smallint(6), Stu_Faculty_Num1 smallint(6), Stu_Faculty_Num2 smallint(6)
+
+
+
 
 insert into Student values(10000001, 'MacIninery', 'Harry', 'Robert', '2000-08-01','Diploma Electrical Engineering','','100 Broadway','Ultimo',2007,000102,100111,000000,00000); 
 Insert into student values(12345678, 'Smith', 'Michael', 'John', '1999-07-03', 'Higher School Certificate', 'Unit 1', '56 Wattle Street', 'Ultimo', 2007, 654321, 100111, 000000, 000000);
-
- --Mark table:
-
-insert into Mark values(10000001, 'MacIninery', 000102, 300101, 'Machine learning');  
 
 
 --Course table:
@@ -97,72 +68,7 @@ insert into course values(000102, 'Software Engineering', 300000, 100022, 'Writi
 insert into course values(000102, 'Software Engineering', 300000, 100025, 'Creative writing'); 
 insert into course values(000102, 'Software Engineering', 300000, 100026, 'Grammar'); 
 insert into course values(000102, 'Software Engineering', 300000, 100031, 'Communication'); 
-insert into course values(000102, 'Software Engineering', 300000, 100032, 'Public speaking'); 
-insert into course values(000102, 'Software Engineering', 300000, 100033, 'Critical Thinking'); 
-insert into course values(000102, 'Software Engineering', 300000, 100037, 'Drama'); 
-insert into course values(000102, 'Software Engineering', 300000, 100039, 'Journalism'); 
-insert into course values(000102, 'Software Engineering', 300000, 100040, 'Technical Writing'); 
-insert into course values(000102, 'Software Engineering', 300000, 100041, 'Programming fundamentals'); 
-insert into course values(000102, 'Software Engineering', 300000, 100042, 'Data structures and Algorithms'); 
-insert into course values(000102, 'Software Engineering', 300000, 100044, 'Computer Architecture'); 
-insert into course values(000102, 'Software Engineering', 300000, 100045, 'Operating Systems'); 
-insert into course values(000102, 'Software Engineering', 300000, 100047, 'Database Fundamentals'); 
-insert into course values(000102, 'Software Engineering', 300000, 100048, 'Web development'); 
-insert into course values(000102, 'Software Engineering', 300000, 100049, 'Artificial Intelligence'); 
-insert into course values(000102, 'Software Engineering', 300000, 100051, 'Cybersecurity'); 
-insert into course values(000102, 'Software Engineering', 300000, 100052, 'Computer Networking'); 
-insert into course values(000102, 'Software Engineering', 300000, 100053, 'Human-Computer interaction'); 
-insert into course values(000102, 'Software Engineering', 300000, 100054, 'computer graphics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100055, 'Mobile application development'); 
-insert into course values(000102, 'Software Engineering', 300000, 100056, 'Data Science'); 
-insert into course values(000102, 'Software Engineering', 300000, 100057, 'Cloud computing'); 
-insert into course values(000102, 'Software Engineering', 300000, 100058, 'Quantum Computing'); 
-insert into course values(000102, 'Software Engineering', 300000, 100059, 'Ethical Hacking'); 
-insert into course values(000102, 'Software Engineering', 300000, 100068, 'Art Appreciation'); 
-insert into course values(000102, 'Software Engineering', 300000, 100069, 'General Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100070, 'Organic Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100071, 'Inorganic Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100072, 'Physical Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100073, 'Analytical chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100074, 'Biochemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100075, 'Environmental chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100076, 'Medicinal Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100077, 'Polymer Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100078, 'Nanotechnology'); 
-insert into course values(000102, 'Software Engineering', 300000, 100079, 'Quantum Technology'); 
-insert into course values(000102, 'Software Engineering', 300000, 100080, 'Forensic Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100081, 'Food Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100082, 'Materials science'); 
-insert into course values(000102, 'Software Engineering', 300000, 100083, 'Green chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100084, 'Industrial Chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100085, 'Petrochemicals'); 
-insert into course values(000102, 'Software Engineering', 300000, 100086, 'Electrochemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100087, 'Surface chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100088, 'Computational chemistry'); 
-insert into course values(000102, 'Software Engineering', 300000, 100089, 'Renaissance Art'); 
-insert into course values(000102, 'Software Engineering', 300000, 100090, 'Baroque Art'); 
-insert into course values(000102, 'Software Engineering', 300000, 100091, 'Modern Art'); 
-insert into course values(000102, 'Software Engineering', 300000, 100092, 'Contemporary Art'); 
-insert into course values(000102, 'Software Engineering', 300000, 100093, 'Sculpture'); 
-insert into course values(000102, 'Software Engineering', 300000, 100094, 'Painting'); 
-insert into course values(000102, 'Software Engineering', 300000, 100095, 'Architecture'); 
-insert into course values(000102, 'Software Engineering', 300000, 100096, 'Photography'); 
-insert into course values(000102, 'Software Engineering', 300000, 100106, 'Mechanical Fundamentals'); 
-insert into course values(000102, 'Software Engineering', 300000, 100107, 'Electromagnetism'); 
-insert into course values(000102, 'Software Engineering', 300000, 100108, 'Thermodynamics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100109, 'Quantum mechanics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100110, 'Astrophysics');
-insert into course values(000102, 'Software Engineering', 300000, 100111, 'Relativity'); 
-insert into course values(000102, 'Software Engineering', 300000, 100112, 'Nuclear physics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100113, 'Optics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100114, 'Acoustics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100115, 'Solid State Physics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100116, 'Plasma Physics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100117, 'Fluid Mechanics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100118, 'Biophysics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100119, 'Geophysics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100120, 'High Energy Physics'); 
-insert into course values(000102, 'Software Engineering', 300000, 100121, 'Particle Physics'); 
+
 
 insert into course values(000103, 'Mechanical Engineering', 300000, 300101, 'Machine learning'); 
 insert into course values(000103, 'Mechanical Engineering', 300000, 100001, 'Mathematics 1'); 
@@ -172,81 +78,7 @@ insert into course values(000103, 'Mechanical Engineering', 300000, 100022, 'Wri
 insert into course values(000103, 'Mechanical Engineering', 300000, 100025, 'Creative writing'); 
 insert into course values(000103, 'Mechanical Engineering', 300000, 100026, 'Grammar'); 
 insert into course values(000103, 'Mechanical Engineering', 300000, 100031, 'Communication'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100032, 'Public speaking'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100033, 'Critical Thinking'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100037, 'Drama'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100039, 'Journalism'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100040, 'Technical Writing'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100041, 'Programming fundamentals'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100042, 'Data structures and Algorithms'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100044, 'Computer Architecture'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100045, 'Operating Systems'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100047, 'Database Fundamentals'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100048, 'Web development'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100049, 'Artificial Intelligence'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100051, 'Cybersecurity'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100052, 'Computer Networking'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100053, 'Human-Computer interaction'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100054, 'computer graphics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100055, 'Mobile application development'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100056, 'Data Science'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100057, 'Cloud computing'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100058, 'Quantum Computing'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100059, 'Ethical Hacking'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100068, 'Art Appreciation'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100069, 'General Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100070, 'Organic Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100071, 'Inorganic Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100072, 'Physical Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100073, 'Analytical chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100074, 'Biochemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100075, 'Environmental chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100076, 'Medicinal Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100077, 'Polymer Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100078, 'Nanotechnology'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100079, 'Quantum Technology'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100080, 'Forensic Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100081, 'Food Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100082, 'Materials science'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100083, 'Green chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100084, 'Industrial Chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100085, 'Petrochemicals'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100086, 'Electrochemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100087, 'Surface chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100088, 'Computational chemistry'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100089, 'Renaissance Art'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100090, 'Baroque Art'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100091, 'Modern Art'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100092, 'Contemporary Art'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100093, 'Sculpture'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100094, 'Painting'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100095, 'Architecture'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100096, 'Photography'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100106, 'Mechanical Fundamentals'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100107, 'Electromagnetism'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100108, 'Thermodynamics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100109, 'Quantum mechanics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100110, 'Astrophysics');
-insert into course values(000103, 'Mechanical Engineering', 300000, 100111, 'Relativity'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100112, 'Nuclear physics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100113, 'Optics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100114, 'Acoustics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100115, 'Solid State Physics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100116, 'Plasma Physics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100117, 'Fluid Mechanics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100118, 'Biophysics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100119, 'Geophysics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100120, 'High Energy Physics'); 
-insert into course values(000103, 'Mechanical Engineering', 300000, 100121, 'Particle Physics'); 
 
-
-
-
-
-
-
-
- 
 
 --subject table:
 
@@ -409,18 +241,5 @@ Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Wil
 
 
 
-
-
-
-
-
-
---staff table:
-
-insert into staff values(800888, 'Who', 'Dr', 'Fred', 'Clarence', '1904-10-31', 300000, 'Engineering and IT', 'Professor'); 
-
---award table:
-
-insert into award values(18001200, 'Professor', '1'); 
 
 
