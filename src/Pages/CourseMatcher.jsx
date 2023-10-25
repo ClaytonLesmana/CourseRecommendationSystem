@@ -3,8 +3,8 @@ import { ScrollRestoration } from "react-router-dom";
 import "../Styles/main.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Select, Input } from "@mantine/core";
-import { Button } from "bootstrap";
+import { Select, Input, Alert } from "@mantine/core";
+// import { IconInfoCircle } from "@tabler/icons-react";
 
 function CourseMatcher() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -12,33 +12,49 @@ function CourseMatcher() {
   const navigate = useNavigate();
   const [selectedMajor, setSelectedMajor] = useState("");
   const [creditPoints, setCreditPoints] = useState(0);
+  const [showPersonalityQuestions, setShowPersonalityQuestions] =
+    useState(false);
+
   const handleNavigation = () => {
     navigate("/CourseMatcherOutput", {
       state: { selectedMajor, creditPoints },
     });
   };
 
-  const [score, setScore] = useState(0);
-  const handleAnswerButtonClick = (isCorrect) => {
-    if (isCorrect === true) {
-      setScore(score + 1);
+  // const [score, setScore] = useState(0);
+  const handleAnswerButtonClick = (answerText) => {
+    if (!showPersonalityQuestions) {
+      if (currentQuestion === 0 && answerText === "No") {
+        setShowPersonalityQuestions(true);
+        return; // Exit the function early to avoid moving to the next question
+      }
+      // Check for Major selection
+      if (currentQuestion === 1 && !selectedMajor) {
+        alert("Please enter your major before continuing.");
+        return;
+      }
+
+      // Check for Credit Points input
+      if (currentQuestion === 2 && (!creditPoints || creditPoints === 0)) {
+        alert("Please enter your credit points before continuing.");
+        return;
+      }
     }
 
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
+    if (nextQuestion < activeQuestions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
+      handleNavigation();
     }
   };
   const questions = [
     {
-      questionText: "What faculty are you in?",
+      questionText: "Are you currently enrolled in a university?",
       answerOptions: [
-        { answerText: "New York", isCorrect: false },
-        { answerText: "London", isCorrect: false },
-        { answerText: "Paris", isCorrect: true },
-        { answerText: "Dublin", isCorrect: false },
+        { answerText: "Yes", isCorrect: false },
+        { answerText: "No", isCorrect: false },
       ],
     },
     {
@@ -100,14 +116,28 @@ function CourseMatcher() {
         </>
       ),
     },
+  ];
+
+  const personalityQuestions = [
     {
-      questionText: "Whats your expected Workload:?",
+      questionText: "what is your favourite hobby?",
       answerOptions: [
-        { answerText: "Part-time", isCorrect: false },
-        { answerText: "Full-time", isCorrect: false },
+        { answerText: "Yes", isCorrect: false },
+        { answerText: "No", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "what is your gender?",
+      answerOptions: [
+        { answerText: "Yes", isCorrect: false },
+        { answerText: "No", isCorrect: false },
       ],
     },
   ];
+
+  const activeQuestions = showPersonalityQuestions
+    ? personalityQuestions
+    : questions;
 
   return (
     <div className="course-matcher-container">
@@ -117,22 +147,22 @@ function CourseMatcher() {
         <>
           <div className="questions-section">
             <div className="question-count">
-              <span>{currentQuestion + 1}</span>/{questions.length}
+              <span>{currentQuestion + 1}</span>/{activeQuestions.length}
             </div>
             <div className="question-text">
-              {questions[currentQuestion].questionText}
+              {activeQuestions[currentQuestion].questionText}
             </div>
           </div>
 
           <div className="answers-section">
-            {questions[currentQuestion].component
-              ? questions[currentQuestion].component
-              : questions[currentQuestion].answerOptions.map(
+            {activeQuestions[currentQuestion].component
+              ? activeQuestions[currentQuestion].component
+              : activeQuestions[currentQuestion].answerOptions.map(
                   (answerOption, index) => (
                     <button
                       key={index}
                       onClick={() =>
-                        handleAnswerButtonClick(answerOption.isCorrect)
+                        handleAnswerButtonClick(answerOption.answerText)
                       }
                       className="button-questionaire"
                     >

@@ -14,6 +14,20 @@ function CourseMatcherOutput() {
   const location = useLocation();
   const [currentYear, setCurrentYear] = React.useState(1);
   const { selectedMajor, creditPoints } = location.state || {};
+
+  // Function to render the desired number of cards
+  const renderCards = (count) => {
+    return (
+      <div className="card-container">
+        {Array.from({ length: count }).map((_, index) => (
+          <div key={index} className="card">
+            <CardOutput />
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <>
       <div className="output-container">
@@ -31,37 +45,14 @@ function CourseMatcherOutput() {
         </div>
       </div>
       <h2 className="year-header">Year {currentYear}</h2>
-      <div className="card-container">
-        <div className="card">
-          <CardOutput />
-        </div>
-        <div className="card">
-          <CardOutput />
-        </div>
-        <div className="card">
-          <CardOutput />
-        </div>
-        <div className="card">
-          <CardOutput />
-        </div>
-      </div>
-      <div className="card-container">
-        <div className="card">
-          <CardOutput />
-        </div>
-        <div className="card">
-          <CardOutput />
-        </div>
-        <div className="card">
-          <CardOutput />
-        </div>
-        <div className="card">
-          <CardOutput />
-        </div>
-      </div>
-
-      {/* <Card />
-      <Card /> */}
+      {selectedMajor && creditPoints ? (
+        <>{renderCards(4)}</>
+      ) : (
+        <>
+          {renderCards(4)}
+          {renderCards(4)}
+        </>
+      )}
     </>
   );
 }
