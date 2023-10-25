@@ -1,39 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 
-import { useParams } from 'react-router-dom';
+function Courses() {
+  const [courses, setCourses] = useState([]);
 
+  useEffect(() => {
+    fetch('http://localhost:3000/courses') // This will send a request to your Node.js server
+      .then((response) => response.json())
+      .then((data) => setCourses(data.courses))
+      .catch((error) => console.error(error));
+  }, []);
 
- 
-
-function CoursePage() {
-  console.log(coursesData);
-
-  const { courseId } = useParams();
-
-  const courseData = coursesData.find((course) => course.id === courseId);
-
-  
-
-  if (!courseData) return <p>Course not found</p>;
-
- 
-
-  return (
-
-    <div>
-
-      <h1>{courseData.title}</h1>
-
-      <p>{courseData.subject}</p>
-
-      {/* Render other course data as needed */}
-
-    </div>
-
-  );
-
+    return (
+        <div>
+            <h1>Courses</h1>
+            <ul>
+                {courses.map((course) => (
+                    <li key={course.course_num}>
+                        <Link to={`/course/${course.course_name}`}>{course.course_name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 }
 
- 
-
-export default CoursePage;
+export default Courses;
