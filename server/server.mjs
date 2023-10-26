@@ -6,7 +6,7 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 // Connect to the SQLite database
-const db = new sqlite3.Database('../Data/Student1.db');
+const db = new sqlite3.Database('../Data/Student2.db');
 
 
 
@@ -41,10 +41,13 @@ app.get('/courses/:courseName', (req, res) => {
   const { courseName } = req.params;
 
   const query = `
-    SELECT course.course_name, subject.subject_number, subject.subject_name
+    SELECT course.course_name, subject.subject_number, subject.subject_name, subject.subject_year
     FROM course
-    JOIN subject ON course.subject_number = subject.subject_number
-    WHERE course.course_name = ?
+    JOIN (
+        SELECT DISTINCT subject_number, subject_name, subject_year
+        FROM subject
+    ) AS subject ON course.subject_number = subject.subject_number
+    WHERE course.course_name = ?;
   `;
 
   db.all(query, [courseName], (err, rows) => {
@@ -63,6 +66,7 @@ app.get('/courses/:courseName', (req, res) => {
         subjects: rows.map((row) => ({
           subject_number: row.subject_number,
           subject_name: row.subject_name,
+          subject_year: row.subject_year
         })),
       };
 
