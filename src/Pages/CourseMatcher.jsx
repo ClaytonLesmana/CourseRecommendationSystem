@@ -1,89 +1,175 @@
 import React, { useState } from "react";
 import { ScrollRestoration } from "react-router-dom";
 import "../Styles/main.css";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Select, Input, Alert } from "@mantine/core";
+// import { IconInfoCircle } from "@tabler/icons-react";
+
 function CourseMatcher() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showScore, setShowScore] = useState(false);
+  const navigate = useNavigate();
+  const [selectedMajor, setSelectedMajor] = useState("");
+  const [creditPoints, setCreditPoints] = useState(0);
+  const [showPersonalityQuestions, setShowPersonalityQuestions] =
+    useState(false);
+
+  const handleNavigation = () => {
+    navigate("/CourseMatcherOutput", {
+      state: { selectedMajor, creditPoints },
+    });
+  };
+
+  // const [score, setScore] = useState(0);
+  const handleAnswerButtonClick = (answerText) => {
+    if (!showPersonalityQuestions) {
+      if (currentQuestion === 0 && answerText === "No") {
+        setShowPersonalityQuestions(true);
+        return; // Exit the function early to avoid moving to the next question
+      }
+      // Check for Major selection
+      if (currentQuestion === 1 && !selectedMajor) {
+        alert("Please enter your major before continuing.");
+        return;
+      }
+
+      // Check for Credit Points input
+      if (currentQuestion === 2 && (!creditPoints || creditPoints === 0)) {
+        alert("Please enter your credit points before continuing.");
+        return;
+      }
+    }
+
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < activeQuestions.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setShowScore(true);
+      handleNavigation();
+    }
+  };
   const questions = [
     {
-      questionText: "What's your programming personality?",
+      questionText: "Are you currently enrolled in a university?",
       answerOptions: [
-        { answerText: "New York", isCorrect: false },
-        { answerText: "London", isCorrect: false },
-        { answerText: "Paris", isCorrect: true },
-        { answerText: "Dublin", isCorrect: false },
+        { answerText: "Yes", isCorrect: false },
+        { answerText: "No", isCorrect: false },
       ],
     },
     {
-      questionText: "Who is CEO of Tesla?",
+      questionText: "Which major are you in?",
+      answerOptions: [],
+      component: (
+        <>
+          <div>
+            <Select
+              label=""
+              placeholder="Your Major"
+              data={[
+                "Biomedical Engineering",
+                "Civil Engineering",
+                "Civil and Enviromental Engineering",
+                "Data Science Engineering",
+                "Electrical Engineering",
+                "Electronic Engineering",
+                "Mechanical Engineering",
+                "Mechanical and Mechatronic Engineering",
+                "Mechatronic Engineering",
+                "Software Engineering",
+                "Electrical and Electronic Engineering",
+                "Flexible Engineering",
+                "Renewable Energy Engineering",
+                "Chemical Process Engineering",
+              ]}
+              className="dropdown"
+              onChange={(value) => setSelectedMajor(value)}
+            />
+            <button
+              onClick={handleAnswerButtonClick}
+              className="button-questionaire-custom"
+            >
+              Continue
+            </button>
+          </div>
+        </>
+      ),
+    },
+    {
+      questionText: "Whats your Current Credit Rating?",
+      answerOptions: [],
+      component: (
+        <>
+          <div>
+            <Input
+              placeholder="Input component"
+              onChange={(e) => setCreditPoints(e.target.value)}
+            />
+            ;
+            <button
+              onClick={handleAnswerButtonClick}
+              className="button-questionaire-custom"
+            >
+              Continue
+            </button>
+          </div>
+        </>
+      ),
+    },
+  ];
+
+  const personalityQuestions = [
+    {
+      questionText: "what is your favourite hobby?",
       answerOptions: [
-        { answerText: "Jeff Bezos", isCorrect: false },
-        { answerText: "Elon Musk", isCorrect: true },
-        { answerText: "Bill Gates", isCorrect: false },
-        { answerText: "Tony Stark", isCorrect: false },
+        { answerText: "Yes", isCorrect: false },
+        { answerText: "No", isCorrect: false },
       ],
     },
     {
-      questionText: "The iPhone was created by which company?",
+      questionText: "what is your gender?",
       answerOptions: [
-        { answerText: "Apple", isCorrect: true },
-        { answerText: "Intel", isCorrect: false },
-        { answerText: "Amazon", isCorrect: false },
-        { answerText: "Microsoft", isCorrect: false },
-      ],
-    },
-    {
-      questionText: "How many Harry Potter books are there?",
-      answerOptions: [
-        { answerText: "1", isCorrect: false },
-        { answerText: "4", isCorrect: false },
-        { answerText: "6", isCorrect: false },
-        { answerText: "7", isCorrect: true },
+        { answerText: "Yes", isCorrect: false },
+        { answerText: "No", isCorrect: false },
       ],
     },
   ];
 
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const activeQuestions = showPersonalityQuestions
+    ? personalityQuestions
+    : questions;
 
-  const [showScore, setShowScore] = useState(false);
-
-  const [score, setScore] = useState(0);
-  const handleAnswerButtonClick = (isCorrect) => {
-    if (isCorrect === true) {
-      setScore(score + 1);
-    }
-
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
-  };
   return (
     <div className="course-matcher-container">
       {showScore ? (
-        <div className="score-sction">
-          You scored {score} out of {questions.length}
-        </div>
+        <div className="score-sction">{handleNavigation()}</div>
       ) : (
         <>
           <div className="questions-section">
             <div className="question-count">
-              <span>{currentQuestion + 1}</span>/{questions.length}
+              <span>{currentQuestion + 1}</span>/{activeQuestions.length}
             </div>
             <div className="question-text">
-              {questions[currentQuestion].questionText}
+              {activeQuestions[currentQuestion].questionText}
             </div>
           </div>
 
           <div className="answers-section">
-            {questions[currentQuestion].answerOptions.map((answerOptions) => (
-              <button
-                onClick={() => handleAnswerButtonClick(answerOptions.isCorrect)}
-                className="button-questionaire"
-              >
-                {answerOptions.answerText}
-              </button>
-            ))}
+            {activeQuestions[currentQuestion].component
+              ? activeQuestions[currentQuestion].component
+              : activeQuestions[currentQuestion].answerOptions.map(
+                  (answerOption, index) => (
+                    <button
+                      key={index}
+                      onClick={() =>
+                        handleAnswerButtonClick(answerOption.answerText)
+                      }
+                      className="button-questionaire"
+                    >
+                      {answerOption.answerText}
+                    </button>
+                  )
+                )}
           </div>
         </>
       )}
