@@ -1,0 +1,1124 @@
+
+
+
+create table Student(       
+    Stu_Num smallint(8),  --pk (primary key)
+    Stu_Surname text, 
+    stu_Middle_Name text,
+    stu_First_Name text,
+    stu_DOB date, 
+    Stu_Award text, 
+    stu_Address_First text,
+    stu_Address_Second text, 
+    stu_City text, 
+    Stu_Post_code smallint(4),
+    --stu_GPA Decimal, --Later implementation 
+    stu_course_Num1 smallint(6),
+    Stu_course_Num2 smallint(6),
+    Stu_Faculty_Num1 smallint(6),
+    Stu_Faculty_Num2 smallint(6)
+
+); 
+
+create table course(
+    course_num smallint(6),     --pk
+    course_name text,
+    faculty_number smallint(6),
+    subject_number smallint(5),
+    subject_name text
+    subject_year smallint
+); 
+
+create table subject(
+    subject_number smallint, --pk
+    subject_name text,
+    faculty_number smallint,
+    faculty_name text,
+    units smallint,
+    subject_year smallint
+);
+
+
+
+create table faculty(
+    faculty_number smallint(6), --pk 
+    faculty_name text, 
+    staff_number smallint(6), 
+    staff_honorific text, 
+    staff_surname text, 
+    staff_first_Name text, 
+    subject_num smallint(5),
+    subject_name text
+); 
+
+
+
+
+
+
+
+
+insert into Student values(10000001, 'MacIninery', 'Harry', 'Robert', '2000-08-01','Diploma Electrical Engineering','','100 Broadway','Ultimo',2007,000102,100111,000000,00000); 
+Insert into student values(12345678, 'Smith', 'Michael', 'John', '1999-07-03', 'Higher School Certificate', 'Unit 1', '56 Wattle Street', 'Ultimo', 2007, 654321, 100111, 000000, 000000);
+
+
+--Course table:
+
+
+
+--Course Name: BioMedical Engineering, Code: 034721
+insert into course values(034721, 'BioMedical Engineering', 300000, 33130, 'Mathematics 1');
+insert into course values(034721, 'BioMedical Engineering', 300000, 48023, 'Programming Fundamentals');
+insert into course values(034721, 'BioMedical Engineering', 300000, 68037, 'Physical Modelling');
+insert into course values(034721, 'BioMedical Engineering', 300000, 48510, 'Introduction to Electrical and Electronic Engineering');
+insert into course values(034721, 'BioMedical Engineering', 300000, 33230, 'Mathematics 2');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41160, 'Introduction to Biomedical Engineering');
+insert into course values(034721, 'BioMedical Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+insert into course values(034721, 'BioMedical Engineering', 300000, 91400, 'Human Anatomy and Physiology');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41200, 'Engineering Project Appraisal');
+insert into course values(034721, 'BioMedical Engineering', 300000, 31250, 'Introduction to Data Analytics');
+insert into course values(034721, 'BioMedical Engineering', 300000, 91822, 'Human Genetics and Precision Medicine');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41162, 'Fundamentals of Biomedical Engineering Studio A');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+insert into course values(034721, 'BioMedical Engineering', 300000, 91161, 'Cell Biology and Genetics');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41202, 'Professional Engineering Communication');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41163, 'Fundamentals of Biomedical Engineering Studio B');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41161, 'Biomedical Industry Frameworks');
+insert into course values(034721, 'BioMedical Engineering', 300000, 91705, 'Medical Devices and Diagnostics');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41028, 'Engineering Work Experience');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+insert into course values(034721, 'BioMedical Engineering', 300000, 42026, 'Biomedical Polymers');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41055, 'Professional Experience Review');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41029, 'Engineering Research Preparation');
+insert into course values(034721, 'BioMedical Engineering', 300000, 43021, 'Advanced Biomedical Engineering Studio A');
+insert into course values(034721, 'BioMedical Engineering', 300000, 42001, 'Bioinformatics');
+insert into course values(034721, 'BioMedical Engineering', 300000, 41030, 'Engineering Capstone');
+insert into course values(034721, 'BioMedical Engineering', 300000, 43022, 'Advanced Biomedical Engineering Studio B');
+
+--
+
+-- Course Name: Civil Engineering, Code: 030011
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48310, 'Introduction to Civil and Environmental Engineering');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 60101, 'Chemistry and Materials Science');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48321, 'Engineering Mechanics');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48320, 'Surveying');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48221, 'Engineering Computations');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48331, 'Mechanics of Solids');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48340, 'Construction');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48330, 'Soil Behaviour');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48349, 'Structural Analysis');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48352, 'Construction Materials');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48353, 'Concrete Design');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48641, 'Fluid Mechanics');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48370, 'Road and Transport Engineering');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48350, 'Environmental and Sanitation Engineering');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48360, 'Geotechnical Engineering');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48366, 'Steel and Timber Design');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48389, 'Computer Modelling and Design');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030011, 'Civil Engineering', 300000, 48362, 'Hydraulics and Hydrology');
+
+--
+
+-- Course Name: Civil and Environmental Engineering, Code: 030012
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 65111, 'Chemistry 1');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48310, 'Introduction to Civil and Environmental Engineering');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48320, 'Surveying');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48321, 'Engineering Mechanics');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48331, 'Mechanics of Solids');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48350, 'Environmental and Sanitation Engineering');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48221, 'Engineering Computations');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48352, 'Construction Materials');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48641, 'Fluid Mechanics');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48821, 'Principles of Environmental Engineering');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48349, 'Structural Analysis');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48860, 'Pollution Control and Waste Management');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48362, 'Hydraulics and Hydrology');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48330, 'Soil Behaviour');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48353, 'Concrete Design');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 91895, 'Civil and Environmental Engineering choice');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48850, 'Environmental Planning and Law');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48360, 'Geotechnical Engineering');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48370, 'Road and Transport Engineering');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 43124, 'Renewable Energy Technology');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48881, 'Water and Environmental Design');
+INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000, 48366, 'Steel and Timber Design');
+
+--
+
+-- Course Name: Electrical, Code: 030013
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48430, 'Fundamentals of C Programming');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48510, 'Introduction to Electrical and Electronic Engineering');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48521, 'Foundations of Electrical and Electronic Technology');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48520, 'Electronics and Circuits');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48441, 'Introductory Digital Systems');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48434, 'Introductory Embedded Systems');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48540, 'Signals and Systems');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48531, 'Electromechanical Automation');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48530, 'Circuit Analysis and Design');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41277, 'Control Design');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41278, 'Power Electronics');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 48572, 'Electrical Power Systems');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 91781, 'Electrical Engineering options');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41088, 'Professional Studio A');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41203, 'Collaboration in Complex Projects');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41089, 'Professional Studio B');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030013, 'Electrical', 300000, 90011, 'Electives');
+
+
+--
+
+-- Course Name: Electronic Engineering, Code: 030014
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48510, 'Introduction to Electrical and Electronic Engineering');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48430, 'Fundamentals of C Programming');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48520, 'Electronics and Circuits');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48521, 'Foundations of Electrical and Electronic Technology');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48441, 'Introductory Digital Systems');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48530, 'Circuit Analysis and Design');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48540, 'Signals and Systems');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 68038, 'Advanced Mathematics and Physics');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41033, 'Integrated Electronic Systems Design');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41086, 'Applications Studio A');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41002, 'Electronic and Computer Engineering Project');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41087, 'Applications Studio B');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 48434, 'Introductory Embedded Systems');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41276, 'Microelectronics');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 92204, 'Electronic Engineering option');
+INSERT INTO course VALUES (030014, 'Electronic Engineering', 300000, 90011, 'Electives');
+
+
+--
+
+-- Course Name: Mechanical Engineering, Code: 030015
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 48610, 'Introduction to Mechanical Engineering');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41053, 'Materials and Manufacturing Engineering A');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41054, 'Applied Mechanics and Design A');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41099, 'Introduction to Mechatronics Engineering');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 48221, 'Engineering Computations');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41056, 'Machines and Mechanisms A');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41057, 'Thermofluids A');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41059, 'Mechanical Design Fundamentals Studio 1');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 43014, 'Applied Mechanics and Design B');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41301, 'Industrial Engineering');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41302, 'Additive Manufacturing 1');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41058, 'Dynamic Systems and Control A');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 43015, 'Thermofluids B');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 43017, 'Machines and Mechanisms B');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41060, 'Mechanical Design Fundamentals Studio 2');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41066, 'Mechanical Systems Design Studio 1');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 91781, 'Mechanical Engineering options');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41067, 'Mechanical Systems Design Studio 2');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 43018, 'Dynamic Systems and Control B');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030015, 'Mechanical Engineering', 300000, 41030, 'Engineering Capstone');
+
+
+--
+
+-- Course Name: Mechanical and Mechatronic Engineering, Code: 030016
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 48610, 'Introduction to Mechanical Engineering');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41053, 'Materials and Manufacturing Engineering A');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41054, 'Applied Mechanics and Design A');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41099, 'Introduction to Mechatronics Engineering');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41039, 'Programming 1');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41056, 'Machines and Mechanisms A');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 48622, 'Embedded Mechatronics Systems');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41059, 'Mechanical Design Fundamentals Studio 1');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41013, 'Industrial Robotics');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41014, 'Sensors and Control for Mechatronic Systems');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41057, 'Thermofluids A');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41012, 'Programming for Mechatronic Systems');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41058, 'Dynamic Systems and Control A');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41070, 'Embedded Mechatronics Studio');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41301, 'Industrial Engineering');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41302, 'Additive Manufacturing 1');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 43014, 'Applied Mechanics and Design B');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 43015, 'Thermofluids B');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 43017, 'Machines and Mechanisms B');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 43018, 'Dynamic Systems and Control B');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41118, 'Artificial Intelligence in Robotics');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41066, 'Mechanical Systems Design Studio 1');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 41067, 'Mechanical Systems Design Studio 2');
+INSERT INTO course VALUES (030016, 'Mechanical and Mechatronic Engineering', 300000, 91781, 'Mechanical Engineering options');
+
+
+--
+
+-- Course Name: Mechatronic Engineering, Code: 030017
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 48610, 'Introduction to Mechanical Engineering');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41053, 'Materials and Manufacturing Engineering A');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41054, 'Applied Mechanics and Design A');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41099, 'Introduction to Mechatronics Engineering');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41039, 'Programming 1');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 48622, 'Embedded Mechatronics Systems');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41056, 'Machines and Mechanisms A');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41059, 'Mechanical Design Fundamentals Studio 1');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41013, 'Industrial Robotics');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41014, 'Sensors and Control for Mechatronic Systems');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41058, 'Dynamic Systems and Control A');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41012, 'Programming for Mechatronic Systems');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41070, 'Embedded Mechatronics Studio');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41068, 'Robotics Studio 1');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41069, 'Robotics Studio 2');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41118, 'Artificial Intelligence in Robotics');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 43019, 'Design in Mechanical and Mechatronic Systems');
+INSERT INTO course VALUES (030017, 'Mechatronic Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+
+
+--
+
+-- Course Name: Data Science Engineering, Code: 030018
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41082, 'Introduction to Data Engineering');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41039, 'Programming 1');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41092, 'Network Fundamentals');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 31250, 'Introduction to Data Analytics');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41084, 'Fundamentals Studio A');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41091, 'Data Systems');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 31271, 'Database Fundamentals');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41085, 'Fundamentals Studio B');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 31005, 'Machine Learning');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41086, 'Applications Studio A');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 'CBK92152', 'Data Science Engineering choice');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41001, 'Cloud Computing and Software as a Service');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41087, 'Applications Studio B');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 'CBK92152', 'Data Science Engineering choice');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41088, 'Professional Studio A');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 48730, 'Cybersecurity');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 'CBK92152', 'Data Science Engineering choice');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41089, 'Professional Studio B');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 'CBK92152', 'Data Science Engineering choice');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030018, 'Data Science Engineering', 300000, 'CBK92152', 'Data Science Engineering choice');
+
+
+--
+
+-- Course Name: Software Engineering, Code: 030019
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 31269, 'Business Requirements Modelling');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41039, 'Programming 1');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 48024, 'Programming 2');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 31282, 'Systems Testing and Quality Management');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 31271, 'Database Fundamentals');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 31251, 'Data Structures and Algorithms');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 31257, 'Information System Development Methodologies');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 10157, 'Information Security');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 10088, 'Network Systems Software');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 03067, 'Real-time Systems (Software Engineering)');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 91234, 'Technical subject choice (Software Engineering)');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 02066, 'Computer Graphics and Animation');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 02065, 'Data Analytics');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 02067, 'Interaction Design');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41127, 'Software Design Studio');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41128, 'Software Analysis Studio');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 48433, 'Software Architecture');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030019, 'Software Engineering', 300000, 41129, 'Software Innovation Studio');
+
+
+--
+
+-- Course Name: Electrical and Electronic Engineering, Code: 030020
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48430, 'Fundamentals of C Programming');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48510, 'Introduction to Electrical and Electronic Engineering');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48520, 'Electronics and Circuits');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48521, 'Foundations of Electrical and Electronic Technology');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48441, 'Introductory Digital Systems');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48434, 'Introductory Embedded Systems');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48540, 'Signals and Systems');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48530, 'Circuit Analysis and Design');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48531, 'Electromechanical Automation');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41277, 'Control Design');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41276, 'Microelectronics');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 48572, 'Electrical Power Systems');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41086, 'Applications Studio A');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 68038, 'Advanced Mathematics and Physics');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41033, 'Integrated Electronic Systems Design');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 92203, 'Electrical Engineering options');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 92204, 'Electronic Engineering option');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41088, 'Professional Studio A');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41278, 'Power Electronics');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41034, 'Electronic Components and Fabrication');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 41089, 'Professional Studio B');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 92203, 'Electrical Engineering options');
+INSERT INTO course VALUES (030020, 'Electrical and Electronic Engineering', 300000, 92204, 'Electronic Engineering option');
+
+
+--
+
+-- Course Name: Chemical Process Engineering, Code: 030021
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 60101, 'Chemistry and Materials Science');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41301, 'Industrial Engineering');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41117, 'Introduction to Chemical Process Engineering');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 65212, 'Chemistry 2');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 48641, 'Fluid Mechanics');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 91161, 'Cell Biology and Genetics');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41380, 'Heat and Mass Transfer');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41308, 'Machine Learning and Industrial Data Science');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 43015, 'Thermofluids B');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41383, 'Process Simulation');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41305, 'Industrial IoT Studio');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41382, 'Unit Operations');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41381, 'Advanced Fluid and Particle Mechanics');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41385, 'Process Dynamics and Control');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 48260, 'Engineering Project Management');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41384, 'Chemical Thermodynamics and Reactor Design');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41108, 'Integrated Product Development for Industry 4.0');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41386, 'Process Design and Safety Studio');
+INSERT INTO course VALUES (030021, 'Chemical Process Engineering', 300000, 41030, 'Engineering Capstone');
+
+
+--
+
+-- Course Name: Renewable Energy Engineering, Code: 030022
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48510, 'Introduction to Electrical and Electronic Engineering');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48520, 'Electronics and Circuits');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 60101, 'Chemistry and Materials Science');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41125, 'Sustainable Energy Studio');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48572, 'Electrical Power Systems');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41039, 'Programming 1');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 43123, 'Energy Storage Technologies');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48531, 'Electromechanical Automation');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 68412, 'Physics of Energy');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48850, 'Environmental Planning and Law');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41124, 'Electrification and Renewables Studio');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48561, 'Renewable Energy Systems Studio A');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 43026, 'Energy Economics, Optimisation and Policy');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 43124, 'Renewable Energy Technology');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48550, 'Renewable Energy Systems Studio B');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41088, 'Professional Studio A');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41089, 'Professional Studio B');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 48582, 'Power Systems Studio A');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030022, 'Renewable Energy Engineering', 300000, 41030, 'Engineering Capstone');
+
+
+
+-- BioMedical Engineering
+insert into subject values(33130, 'Mathematics 1', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(48023, 'Programming Fundamentals', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(68037, 'Physical Modelling', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(48510, 'Introduction to Electrical and Electronic Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(33230, 'Mathematics 2', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(41160, 'Introduction to Biomedical Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(48230, 'Introduction to Engineering Projects', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(91400, 'Human Anatomy and Physiology', 300000, 'Facility of Engineering and IT', 6, 1);
+insert into subject values(41200, 'Engineering Project Appraisal', 300000, 'Facility of Engineering and IT', 6, 2);
+insert into subject values(31250, 'Introduction to Data Analytics', 300000, 'Facility of Engineering and IT', 6, 2);
+insert into subject values(91822, 'Human Genetics and Precision Medicine', 300000, 'Facility of Engineering and IT', 6, 2);
+insert into subject values(41162, 'Fundamentals of Biomedical Engineering Studio A', 300000, 'Facility of Engineering and IT', 6, 2);
+insert into subject values(41035, 'Professional Practice Preparation 1', 300000, 'Facility of Engineering and IT', 3, 2);
+insert into subject values(91161, 'Cell Biology and Genetics', 300000, 'Facility of Engineering and IT', 6, 2);
+insert into subject values(41201, 'Designing Sustainable Engineering Projects', 300000, 'Facility of Engineering and IT', 6, 2);
+insert into subject values(41202, 'Professional Engineering Communication', 300000, 'Facility of Engineering and IT', 6, 3);
+insert into subject values(41163, 'Fundamentals of Biomedical Engineering Studio B', 300000, 'Facility of Engineering and IT', 6, 3);
+insert into subject values(41161, 'Biomedical Industry Frameworks', 300000, 'Facility of Engineering and IT', 6, 3);
+insert into subject values(91705, 'Medical Devices and Diagnostics', 300000, 'Facility of Engineering and IT', 6, 3);
+insert into subject values(41028, 'Engineering Work Experience', 300000, 'Facility of Engineering and IT', 0, 3);
+insert into subject values(41203, 'Collaboration in Complex Projects', 300000, 'Facility of Engineering and IT', 6, 3);
+insert into subject values(42026, 'Biomedical Polymers', 300000, 'Facility of Engineering and IT', 6, 3);
+insert into subject values(41055, 'Professional Experience Review', 300000, 'Facility of Engineering and IT', 6, 4);
+insert into subject values(41029, 'Engineering Research Preparation', 300000, 'Facility of Engineering and IT', 6, 4);
+insert into subject values(43021, 'Advanced Biomedical Engineering Studio A', 300000, 'Facility of Engineering and IT', 12, 4);
+insert into subject values(42001, 'Bioinformatics', 300000, 'Facility of Engineering and IT', 6, 4);
+insert into subject values(41030, 'Engineering Capstone', 300000, 'Facility of Engineering and IT', 6, 4);
+insert into subject values(43022, 'Advanced Biomedical Engineering Studio B', 300000, 'Facility of Engineering and IT', 12, 4);
+insert into subject values(42722, 'Additive Manufacturing for Medical Innovations', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Civil Engineering
+-- Year 1
+-- Autumn session
+INSERT INTO subject VALUES (33130, 'Mathematics 1', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (68037, 'Physical Modelling', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (60101, 'Chemistry and Materials Science', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Spring session
+INSERT INTO subject VALUES (33230, 'Mathematics 2', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (48321, 'Engineering Mechanics', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (48230, 'Introduction to Engineering Projects', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (48320, 'Surveying', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (41200, 'Engineering Project Appraisal', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48221, 'Engineering Computations', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48340, 'Construction', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41035, 'Professional Practice Preparation 1', 300000, 'Facility of Engineering and IT', 3, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (41201, 'Designing Sustainable Engineering Projects', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48330, 'Soil Behaviour', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48349, 'Structural Analysis', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48352, 'Construction Materials', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41202, 'Professional Engineering Communication', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48353, 'Concrete Design', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48641, 'Fluid Mechanics', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48370, 'Road and Transport Engineering', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (41203, 'Collaboration in Complex Projects', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48350, 'Environmental and Sanitation Engineering', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48360, 'Geotechnical Engineering', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41028, 'Engineering Work Experience', 300000, 'Facility of Engineering and IT', 0, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (41055, 'Professional Experience Review', 300000, 'Facility of Engineering and IT', 3, 4);
+INSERT INTO subject VALUES (41029, 'Engineering Research Preparation', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (48366, 'Steel and Timber Design', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (48389, 'Computer Modelling and Design', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41030, 'Engineering Capstone', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (48362, 'Hydraulics and Hydrology', 300000, 'Facility of Engineering and IT', 6, 4);
+
+--Civil and Envo
+-- Year 1
+-- Autumn session
+
+
+INSERT INTO subject VALUES (65111, 'Chemistry 1', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (48310, 'Introduction to Civil and Environmental Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Spring session
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (48331, 'Mechanics of Solids', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48350, 'Environmental and Sanitation Engineering', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (48641, 'Fluid Mechanics', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48821, 'Principles of Environmental Engineering', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (48349, 'Structural Analysis', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48860, 'Pollution Control and Waste Management', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48362, 'Hydraulics and Hydrology', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (48330, 'Soil Behaviour', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (91895, 'Civil and Environmental Engineering choice', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- December session
+INSERT INTO subject VALUES (48850, 'Environmental Planning and Law', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (48360, 'Geotechnical Engineering', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (48370, 'Road and Transport Engineering', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (43124, 'Renewable Energy Technology', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (48881, 'Water and Environmental Design', 300000, 'Facility of Engineering and IT', 6, 4);
+
+--Electrical
+-- Year 1
+-- Autumn session
+
+INSERT INTO subject VALUES (48430, 'Fundamentals of C Programming', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (48510, 'Introduction to Electrical and Electronic Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+
+
+-- Spring session
+INSERT INTO subject VALUES (48521, 'Foundations of Electrical and Electronic Technology', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (48520, 'Electronics and Circuits', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (48441, 'Introductory Digital Systems', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48434, 'Introductory Embedded Systems', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48540, 'Signals and Systems', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (48531, 'Electromechanical Automation', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (48530, 'Circuit Analysis and Design', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41277, 'Control Design', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41278, 'Power Electronics', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48572, 'Electrical Power Systems', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (91781, 'Electrical Engineering options', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (41088, 'Professional Studio A', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (91781, 'Electrical Engineering ', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (41089, 'Professional Studio B', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (91781, 'Electrical Engineering options', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (90011, 'Electives', 300000, 'Facility of Engineering and IT', 6, 4);
+
+--Electronic Engineering
+-- Year 1
+-- Autumn session
+
+
+
+-- Spring session
+
+-- Year 2
+-- Autumn session
+
+-- Spring session
+INSERT INTO subject VALUES (68038, 'Advanced Mathematics and Physics', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41033, 'Integrated Electronic Systems Design', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41086, 'Applications Studio A', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41087, 'Applications Studio B', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48434, 'Introductory Embedded Systems', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41276, 'Microelectronics', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (92204, 'Electronic Engineering option', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (90011, 'Electives', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (41277, 'Control Design', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41034, 'Electronic Components and Fabrication', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (90011, 'Electives', 300000, 'Facility of Engineering and IT', 18, 4);
+
+--Mechanical Engineering
+-- Year 1
+-- Autumn session
+
+INSERT INTO subject VALUES (48610, 'Introduction to Mechanical Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+
+
+-- Spring session
+INSERT INTO subject VALUES (41053, 'Materials and Manufacturing Engineering A', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (41054, 'Applied Mechanics and Design A', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (41099, 'Introduction to Mechatronics Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (48221, 'Engineering Computations', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (33230, 'Mathematics 2', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41056, 'Machines and Mechanisms A', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41057, 'Thermofluids A', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41059, 'Mechanical Design Fundamentals Studio 1', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (43014, 'Applied Mechanics and Design B', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41301, 'Industrial Engineering', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41302, 'Additive Manufacturing 1', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41058, 'Dynamic Systems and Control A', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (43015, 'Thermofluids B', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (43017, 'Machines and Mechanisms B', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41060, 'Mechanical Design Fundamentals Studio 2', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (41201, 'Designing Sustainable Engineering Projects', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41066, 'Mechanical Systems Design Studio 1', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (91781, 'Mechanical Engineering options', 300000, 'Facility of Engineering and IT', 12, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (41067, 'Mechanical Systems Design Studio 2', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (43018, 'Dynamic Systems and Control B', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41202, 'Professional Engineering Communication', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (43019, 'Design in Mechanical and Mechatronic Systems', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (91781, 'Mechanical Engineering options', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41203, 'Collaboration in Complex Projects', 300000, 'Facility of Engineering and IT', 6, 4);
+
+--Mechanical and Mechatronic Engineering
+-- Year 1
+-- Autumn session
+
+
+
+-- Spring session
+INSERT INTO subject VALUES (41039, 'Programming 1', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (48622, 'Embedded Mechatronics Systems', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (41013, 'Industrial Robotics', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41014, 'Sensors and Control for Mechatronic Systems', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41012, 'Programming for Mechatronic Systems', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41070, 'Embedded Mechatronics Studio', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (41301, 'Industrial Engineering', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41302, 'Additive Manufacturing 1', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (43014, 'Applied Mechanics and Design B', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (43018, 'Dynamic Systems and Control B', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41118, 'Artificial Intelligence in Robotics', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (41066, 'Mechanical Systems Design Studio 1', 300000, 'Facility of Engineering and IT', 6, 4);
+
+--Mechatronic Engineering
+-- Year 1
+-- Autumn session
+
+
+
+-- Spring session
+
+-- Year 2
+-- Autumn session
+
+-- Spring session
+
+-- Year 3
+-- Autumn session
+
+-- Spring session
+INSERT INTO subject VALUES (41068, 'Robotics Studio 1', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (41069, 'Robotics Studio 2', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41118, 'Artificial Intelligence in Robotics', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+
+--Data Science Engineering
+-- Year 1
+-- Autumn session
+
+INSERT INTO subject VALUES (41082, 'Introduction to Data Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Spring session
+INSERT INTO subject VALUES (41092, 'Network Fundamentals', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (31250, 'Introduction to Data Analytics', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (41084, 'Fundamentals Studio A', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (68037, 'Physical Modelling', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41091, 'Data Systems', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (31271, 'Database Fundamentals', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41085, 'Fundamentals Studio B', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (31005, 'Machine Learning', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (92152, 'Data Science Engineering choice', 300000, 'Facility of Engineering and IT', 18, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41001, 'Cloud Computing and Software as a Service', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (92152, 'Data Science Engineering choice', 300000, 'Facility of Engineering and IT', 18, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (48730, 'Cybersecurity', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (92152, 'Data Science Engineering choice', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (92152, 'Data Science Engineering choice', 300000, 'Facility of Engineering and IT', 18, 4);
+
+--Software Engineering
+-- Year 1
+-- Autumn session
+
+INSERT INTO subject VALUES (31269, 'Business Requirements Modelling', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Spring session
+INSERT INTO subject VALUES (48024, 'Programming 2', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (31282, 'Systems Testing and Quality Management', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (31271, 'Database Fundamentals', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (31251, 'Data Structures and Algorithms', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (31257, 'Information System Development Methodologies', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (10157, 'Information Security', 300000, 'Facility of Engineering and IT', 24, 2);
+INSERT INTO subject VALUES (10088, 'Network Systems Software', 300000, 'Facility of Engineering and IT', 24, 2);
+INSERT INTO subject VALUES (03067, 'Real-time Systems (Software Engineering)', 300000, 'Facility of Engineering and IT', 24, 2);
+INSERT INTO subject VALUES (91234, 'Technical subject choice (Software Engineering)', 300000, 'Facility of Engineering and IT', 24, 2);
+INSERT INTO subject VALUES (02066, 'Computer Graphics and Animation', 300000, 'Facility of Engineering and IT', 24, 2);
+INSERT INTO subject VALUES (02065, 'Data Analytics', 300000, 'Facility of Engineering and IT', 24, 2);
+INSERT INTO subject VALUES (02067, 'Interaction Design', 300000, 'Facility of Engineering and IT', 24, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (41127, 'Software Design Studio', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (10157, 'Information Security', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (10088, 'Network Systems Software', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (03067, 'Real-time Systems (Software Engineering)', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (91234, 'Technical subject choice (Software Engineering)', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (02066, 'Computer Graphics and Animation', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (02065, 'Data Analytics', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (02067, 'Interaction Design', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41113, 'Software Development Studio', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (10157, 'Information Security', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (10088, 'Network Systems Software', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (03067, 'Real-time Systems (Software Engineering)', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (91234, 'Technical subject choice (Software Engineering)', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (02066, 'Computer Graphics and Animation', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (02065, 'Data Analytics', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (02067, 'Interaction Design', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (41128, 'Software Analysis Studio', 300000, 'Facility of Engineering and IT', 12, 3);
+INSERT INTO subject VALUES (48433, 'Software Architecture', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (10157, 'Information Security', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (10088, 'Network Systems Software', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (03067, 'Real-time Systems (Software Engineering)', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (91234, 'Technical subject choice (Software Engineering)', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (02066, 'Computer Graphics and Animation', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (02065, 'Data Analytics', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (02067, 'Interaction Design', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (41129, 'Software Innovation Studio', 300000, 'Facility of Engineering and IT', 12, 4);
+
+--Electrical and Electronic Engineering
+-- Year 1
+-- Autumn session
+
+
+
+-- Spring session
+
+-- Year 2
+-- Autumn session
+
+-- Spring session
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41086, 'Applications Studio A', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (68038, 'Advanced Mathematics and Physics', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41033, 'Integrated Electronic Systems Design', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (92203, 'Electrical Engineering options', 300000, 'Facility of Engineering and IT', 12, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (41088, 'Professional Studio A', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41278, 'Power Electronics', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (92203, 'Electrical Engineering options', 300000, 'Facility of Engineering and IT', 12, 4);
+INSERT INTO subject VALUES (92204, 'Electronic Engineering option', 300000, 'Facility of Engineering and IT', 6, 4);
+
+--Chemical Process Engineering
+-- Year 1
+-- Autumn session
+
+
+
+-- Spring session
+INSERT INTO subject VALUES (41301, 'Industrial Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (41117, 'Introduction to Chemical Process Engineering', 300000, 'Facility of Engineering and IT', 6, 1);
+INSERT INTO subject VALUES (65212, 'Chemistry 2', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (91161, 'Cell Biology and Genetics', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41380, 'Heat and Mass Transfer', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (41308, 'Machine Learning and Industrial Data Science', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41383, 'Process Simulation', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41305, 'Industrial IoT Studio', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41382, 'Unit Operations', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (41381, 'Advanced Fluid and Particle Mechanics', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (41385, 'Process Dynamics and Control', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (48260, 'Engineering Project Management', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41384, 'Chemical Thermodynamics and Reactor Design', 300000, 'Facility of Engineering and IT', 6, 4);
+INSERT INTO subject VALUES (41108, 'Integrated Product Development for Industry 4.0', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+INSERT INTO subject VALUES (41386, 'Process Design and Safety Studio', 300000, 'Facility of Engineering and IT', 6, 4);
+
+
+--Renewable Energy Engineering
+-- Year 1
+-- Autumn session
+
+
+
+-- Spring session
+INSERT INTO subject VALUES (41125, 'Sustainable Energy Studio', 300000, 'Facility of Engineering and IT', 6, 1);
+
+-- Year 2
+-- Autumn session
+INSERT INTO subject VALUES (48572, 'Electrical Power Systems', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (41039, 'Programming 1', 300000, 'Facility of Engineering and IT', 6, 2);
+INSERT INTO subject VALUES (43123, 'Energy Storage Technologies', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Spring session
+INSERT INTO subject VALUES (68412, 'Physics of Energy', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- December session
+INSERT INTO subject VALUES (48850, 'Environmental Planning and Law', 300000, 'Facility of Engineering and IT', 6, 2);
+
+-- Year 3
+-- Autumn session
+INSERT INTO subject VALUES (41124, 'Electrification and Renewables Studio', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48561, 'Renewable Energy Systems Studio A', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (43026, 'Energy Economics, Optimisation and Policy', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Spring session
+INSERT INTO subject VALUES (43124, 'Renewable Energy Technology', 300000, 'Facility of Engineering and IT', 6, 3);
+INSERT INTO subject VALUES (48550, 'Renewable Energy Systems Studio B', 300000, 'Facility of Engineering and IT', 6, 3);
+
+-- Year 4
+-- Autumn session
+INSERT INTO subject VALUES (48582, 'Power Systems Studio A', 300000, 'Facility of Engineering and IT', 6, 4);
+
+-- Spring session
+
+
+
+
+
+--Faculty table:
+
+insert into faculty values(300000, 'Engineering and IT', 800888, 'Dr','Who','Fred', 300101, 'Machine learning'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800100, 'Dr', 'Leonhard', 'Euler', 100001, 'Mathematics 1'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800101, 'Dr', 'Harald', 'Bohr', 100002, 'Mathematics 2'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800102, 'Dr', 'Leone', 'Alberti', '100020, 'Cryptography');   
+Insert into faculty values(500000, 'Faculty of Design, Architecture and Building,
+Insert into faculty values(400000, 'Facility of Arts and social sciences'
+Insert into faculty values(100000, 'School of Business', 800103, 'Dr', 'Jeffery', 'Deaver',  100022,'Writing skills'); 
+Insert into faculty values(100000, 'School of Business', 800104, 'Dr', 'Terry', 'Pratchet', 100025, 'Creative writing'); 
+Insert into faculty values(100000, 'School of Business', 800105, 'Dr', 'John', 'Tolkien', 100026, 'Grammar'); 
+Insert into faculty values(100000, 'School of Business', 800106, 'Dr', 'Martin', 'King', 100031, 'Communication'); 
+Insert into faculty values(100000, 'School of Business', 800106, 'Dr', 'Martin', 'King', 100032, 'Public speaking'); 
+Insert into faculty values(100000, 'school of business', 800107, 'Dr', 'William', 'Ponder', 100033, 'Critical Thinking'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800108, 'Dr', 'Hugh', 'Jackman', 100037, 'Drama'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800109, 'Dr', 'Kitty', 'Flanagan', 100039, 'Journalism'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800110, 'Dr', 'Philip', 'Dull', 100040, 'Technical Writing'); 
+Insert into faculty values(300000, 'Engineering and IT', 800111, 'Dr', 'Bill', 'Joy', 100041, 'Programming fundamentals'); 
+Insert into faculty values(300000, 'Engineering and IT', 800112, 'Dr', 'Bjarne', 'Stroustrup', 100042, 'Data structures and Algorithms'); 
+Insert into faculty values(300000, 'Engineering and IT', 800113, 'Dr', 'Charles','Babbage', 100044, 'Computer Architecture'); 
+Insert into faculty values(300000, 'Engineering and IT', 800114, 'Dr', 'Joseph','Wilson',100045, 'Operating Systems');
+Insert into faculty values(300000, 'Engineering and IT', 800115, 'Dr', 'Charles','Bachman',100047, 'Database Fundamentals'); 
+Insert into faculty values(300000, 'Engineering and IT', 800116, 'Dr', 'Bob','Kahn', 100048, 'Web development');
+Insert into faculty values(300000, 'Engineering and IT', 800117, 'Dr', 'Alan','Turing', 100049, 'Artificial Intelligence');
+Insert into faculty values(300000, 'Engineering and IT', 800118, 'Dr', 'Colin ', 'Hacker', 100051, 'Cybersecurity'); 
+Insert into faculty values(300000, 'Engineering and IT', 800119, 'Dr', 'Vint','Nerf', 100052, 'Computer Networking'); 
+Insert into faculty values(300000, 'Engineering and IT', 800120, 'Dr', 'Susan','Calvin', 100053, 'Human-Computer interaction'); 
+Insert into faculty values(300000, 'Engineering and IT', 800121, 'Dr', 'Lara', 'Croft', 100054, 'computer graphics'); 
+Insert into faculty values(300000, 'Engineering and IT', 800122, 'Dr', 'Samus' , 'Aran', 100055, 'Mobile application development'); 
+Insert into faculty values(300000, 'Engineering and IT', 800123, 'Dr', 'Jill','Valentine', 100056, 'Data Science'); 
+Insert into faculty values(300000, 'Engineering and IT', 800124, 'Dr', 'Joseph','Licklider', 100057, 'Cloud computing');
+Insert into faculty values(300000, 'Engineering and IT', 800125, 'Dr', 'Isaac','Chuang', 100058, 'Quantum Computing'); 
+Insert into faculty values(300000, 'Engineering and IT', 800126, 'Dr', 'John','Patrick', 100059,'Ethical Hacking'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800127, 'Dr', 'Percy', 'Baroque', 100068, 'Art Appreciation'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800128, 'Dr', 'John', 'Dalton', 100069, 'General Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800129, 'Dr', 'Robert', 'Boyle', 100070, 'Organic Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800130, 'Dr', 'Robert', 'Robinson', 100071, 'Inorganic Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800131, 'Dr', 'Louis', 'Pasteur', 100072, 'Physical Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800132, 'Dr', 'Antoine', 'Lavoisier', 100073, 'Analytical chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800133, 'Dr', 'Herbert', 'Brown', 100074, 'Biochemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800134, 'Dr', 'Emil', 'Fischer', 100075, 'Environmental chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800135, 'Dr', 'Elias', 'Corey', 100076, 'Medicinal Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800136, 'Dr', 'Jons', 'Berzelius', 100077, 'Polymer Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800137, 'Dr', 'Derek', 'Barton', 100078, 'Nanotechnology'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800138, 'Dr', 'Adolf', 'von Baeyer', 100079, 'Quantum Technology'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800139, 'Dr', 'August', 'Kekule', 100080, 'Forensic Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800140, 'Dr', 'Linus', 'Pauling', 100081, 'Food Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800141, 'Dr', 'Albert', 'Hofmann', 100082, 'Materials science'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800142, 'Dr', 'Joseph', 'Priestley', 100083, 'Green chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800143, 'Dr', 'Justus', 'von Liebig', 100084, 'Industrial Chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800144, 'Dr', 'Friedrich', 'Kohler', 100085, 'Petrochemicals'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800145, 'Dr', 'Herman', 'Staudinger', 100086, 'Electrochemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800146, 'Dr', 'Carl', 'Bosch', 100087, 'Surface chemistry'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800147, 'Dr', 'Stephen', 'Buchwald', 100088, 'Computational chemistry'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800148, 'Dr', 'Leonardo ', 'da Vinci', 100089, 'Renaissance Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800149, 'Dr', 'Peter', 'Rubens', 100090, 'Baroque Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800150, 'Dr', 'Jackson' , 'Pollock', 100091, 'Modern Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800151, 'Dr', 'Keith', 'Haring', 100092, 'Contemporary Art'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800152, 'Dr', 'Constantin', 'Brancusi', 100093, 'Sculpture'); 
+Insert into faculty values(400000, 'Facility of Arts and social sciences', 800153, 'Dr', 'Salvador', 'Dali', 100094, 'Painting'); 
+Insert into faculty values(500000, 'Faculty of Design, Architecture and Building, 800154, 'Dr', 'Frank ', 'Lloyd Wright', 100095, 'Architecture'); 
+Insert into faculty values(500000, 'Faculty of Design, Architecture and Building, 800155, 'Dr', 'Dorothea', 'Lange', 100096, 'Photography'); 
+Insert into faculty values(300000, 'Facility of Engineering and IT', 800156, 'Dr', 'George', 'Stephenson', 100106, 'Mechanical Fundamentals'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'James','Maxwell', 100107, 'Electromagnetism'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Max','Planck', 100108, 'Thermodynamics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Erwin','Schrödinger', 100109, 'Quantum mechanics');
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Brian','May', 100110, 'Astrophysics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Albert','Einstein', 100111, 'Relativity'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Robert','Oppenheimer', 100112, 'Nuclear physics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Christiaan','Huygens', 100113, 'Optics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Wallace','Sabine', 100114, 'Acoustics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Charles','Kittel', 100115, 'Solid State Physics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Daniel','Bernoulli', 100117, 'Fluid Mechanics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Francis','Crick', 100118, 'Biophysics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Wolfgang','Pauli', 100120, 'High Energy Physics'); 
+Insert into faculty values(200000, 'Mathematics and Science', 800157, 'Dr', 'Wilhwelm','Wien', 100121, 'Particle Physics'); 
+
+
+
+
+
