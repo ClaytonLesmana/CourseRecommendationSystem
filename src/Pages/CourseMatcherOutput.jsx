@@ -8,12 +8,13 @@ import { useLocation } from "react-router-dom";
 function CourseMatcherOutput() {
   const handleNavigation = () => {
     navigate("/CourseMatcherOutput", {
-      state: { selectedMajor, creditPoints },
+      state: { selectedMajor, creditPoints, suggestedEngineeringType },
     });
   };
   const location = useLocation();
   const [currentYear, setCurrentYear] = React.useState(1);
-  const { selectedMajor, creditPoints } = location.state || {};
+  const { selectedMajor, creditPoints, suggestedEngineeringType } =
+    location.state || {};
 
   // Function to render the desired number of cards
   const renderCards = (count) => {
@@ -32,7 +33,11 @@ function CourseMatcherOutput() {
     <>
       <div className="output-container">
         <div className="progress-bar-placeholder">
-          <h2 className="major-header"> {selectedMajor || "Default Major"}</h2>
+          <h2 className="major-header">
+            {" "}
+            {selectedMajor || suggestedEngineeringType || "Default Major"}
+          </h2>
+
           <TimelineProgress
             creditPoints={creditPoints}
             setYear={setCurrentYear}
