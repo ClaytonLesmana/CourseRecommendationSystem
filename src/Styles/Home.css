@@ -1,0 +1,57 @@
+/* Home.css */
+.home-container {
+    text-align: center;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+    padding: 2rem;
+  }
+  
+  .home-title {
+    font-size: 4rem;
+    margin-top: 8rem;
+    font-weight: bold;
+  }
+  
+  .home-description {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+  }
+  
+  .slideshow-card {
+    width: 300px; /* Adjust the card width as needed */
+    margin: 4rem auto; /* Increase the margin-top to move the slideshow lower */
+    padding: 1rem;
+    border: 1px solid #ccc; /* Add a border around the card */
+    text-align: center;
+    transition: transform 0.5s ease;
+}
+
+/* Animation for sliding between slides */
+.slideshow-card.active {
+    transform: translateX(0);
+}
+
+.slideshow-card.inactive-left {
+    transform: translateX(-100%);
+}
+
+.slideshow-card.inactive-right {
+    transform: translateX(100%);
+}
+  .slideshow-controls {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .slideshow-controls button {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .slideshow-controls button:hover {
+    background-color: #0056b3;
+  }
