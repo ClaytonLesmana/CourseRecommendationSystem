@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Select, Input, Alert } from "@mantine/core";
 // import { IconInfoCircle } from "@tabler/icons-react";
-
 const allCourseData = {
   "Electrical Engineering": {
     1: [
@@ -764,11 +763,6 @@ function getCoursesForMajorAndYear(major, suggestedType, year) {
   return courseData[majorType][year];
 }
 
-function getAllCoursesForMajorAndYear(major, suggestedType, year) {
-  const majorType = major || suggestedType;
-  return allCourseData[majorType][year];
-}
-
 function CourseMatcher() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -780,17 +774,17 @@ function CourseMatcher() {
   const [answers, setAnswers] = useState({});
   const handleNavigation = () => {
     const year = determinYear(creditPoints);
+    const year2 = 0;
     const suggestedEngineeringType = determineEngineeringType(answers);
     const courses = getCoursesForMajorAndYear(
       selectedMajor,
       suggestedEngineeringType,
       year
     );
-
-    const allCourses = getAllCoursesForMajorAndYear(
+    const allCourses = getCoursesForMajorAndYear(
       selectedMajor,
       suggestedEngineeringType,
-      year
+      year2
     );
 
     navigate("/CourseMatcherOutput", {
@@ -800,7 +794,7 @@ function CourseMatcher() {
         suggestedEngineeringType,
         year,
         courses,
-        allCourses,
+        // allCourses,
       },
     });
   };

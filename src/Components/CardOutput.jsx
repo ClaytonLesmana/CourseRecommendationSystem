@@ -1,8 +1,9 @@
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
+import "../Styles/main.css";
 
 export default function CardOutput({ title }) {
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
+    <Card shadow="sm" className="card" padding="lg" radius="md" withBorder>
       <Group justify="space-between" mt="md" mb="xs">
         {/* Course Title */}
         <Text size="lg" fw={700}>
