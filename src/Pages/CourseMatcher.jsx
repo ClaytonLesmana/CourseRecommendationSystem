@@ -6,21 +6,408 @@ import { Link } from "react-router-dom";
 import { Select, Input, Alert } from "@mantine/core";
 // import { IconInfoCircle } from "@tabler/icons-react";
 
+const allCourseData = {
+  "Electrical Engineering": {
+    1: [
+      "Mathematics one",
+      "Fundamentals of C Programming",
+      "Introduction to Electrical and Electronic Engineering",
+      "Physical Modelling",
+      "Mathematics two",
+      "Introduction to Engineering Projects",
+      "Foundations of Electrical and Electronic Technology",
+      "Electronics and Circuits",
+    ],
+    2: [
+      "Engineering Project Appraisal",
+      "Introductory Digital Systems",
+      "Introductory Embedded Systems",
+      "Signals and Systems",
+      "Professional Practice Preparation 1",
+      "Designing Sustainable Engineering Projects",
+      "Electromechanical Automation",
+      "Circuit Analysis and Design",
+      "Control Design",
+    ],
+    3: [
+      "Professional Engineering Communication",
+      "Power Electronics",
+      "Electrical Power Systems",
+      "Electrical Engineering Elective One",
+      "Engineering Work Experience",
+      "Professional Studio A",
+      "Collaboration in Complex Projects",
+      "Electrical Engineering Elective Two",
+      "Electrical Engineering Elective Three",
+    ],
+    4: [
+      "Professional Experience Review",
+      "Engineering Research Preparation",
+      "Professional Studio B",
+      "Electrical Engineering Elective Four",
+      "Elective One",
+      "Engineering Capstone",
+      "Elective Two",
+      "Elective Three",
+      "Elective Four",
+    ],
+  },
+  "Software Engineering": {
+    1: [
+      "Mathematics one",
+      "Introduction to Engineering Projects",
+      "Business Requirements Modelling",
+      "Programming 1",
+      "Mathematics two",
+      "Programming two",
+      "Systems Testing and Quality Management",
+      "Database Fundamentals",
+    ],
+    2: [
+      "Professional Practice Preparation 1",
+      "Physical Modelling",
+      "Data Structures and Algorithms",
+      "Information System Development Methodologies",
+      "Software Engineering Elective one",
+      "Engineering Project Appraisal",
+      "Software Design Studio",
+      "Software Engineering Elective two",
+    ],
+    3: [
+      "Designing Sustainable Engineering Projects",
+      " Software Development Studio",
+      "Software Engineering Elective Three",
+      "Engineering Work Experience",
+      "Professional Engineering Communication",
+      "Software Analysis Studio",
+      "Software Architecture",
+    ],
+    4: [
+      "Engineering Research Preparation",
+      "Collaboration in Complex Projects",
+      "Professional Experience Review",
+      "Software Engineering Elective Four",
+      "Engineering Capstone",
+      "Software Innovation Studio",
+      "Software Engineering Elective Five",
+    ],
+  },
+  "Mechatronic Engineering": {
+    1: [
+      "Mathematics one",
+      "Introduction to Engineering Projects",
+      "Introduction to Mechanical Engineering",
+      "Physical Modelling",
+      "Materials and Manufacturing Engineering A",
+      "Applied Mechanics and Design A",
+      "Introduction to Mechatronics Engineering",
+      "Programming 1",
+    ],
+    2: [
+      "Mathematics Two",
+      "Embedded Mechatronics Systems",
+      "Machines and Mechanisms A",
+      "Mechanical Design Fundamentals Studio 1",
+      "Professional Practice Preparation 1",
+      "Engineering Project Appraisal",
+      "Industrial Robotics",
+      "Sensors and Control for Mechatronic Systems",
+      "Mechatronic Elective One",
+    ],
+    3: [
+      "Designing Sustainable Engineering Projects",
+      "Programming for Mechatronic Systems",
+      "Embedded Mechatronics Studio",
+      "Dynamic Systems and Control A",
+      "Professional Engineering Communication",
+      "Robotics Studio 1",
+      "Engineering Work Experience",
+      "Mechatronic Elective Two",
+      "Mechatronic Elective Three",
+    ],
+    4: [
+      "Robotics Studio 2",
+      "Professional Experience Review",
+      "Engineering Research Preparation",
+      "Artificial Intelligence in Robotics",
+      "Mechatronic Elective Four",
+      "Engineering Capstone",
+      "Design in Mechanical and Mechatronic System",
+      "Collaboration in Complex Projects",
+      "Software Engineering Elective Six",
+    ],
+  },
+  "Mechanical Engineering": {
+    1: [
+      "Mathematics one",
+      "Introduction to Engineering Projects",
+      " Introduction to Mechanical Engineering",
+      "Physical Modelling",
+      "Materials and Manufacturing Engineering A",
+      "Applied Mechanics and Design A",
+      "Introduction to Mechatronics Engineering",
+      "Engineering Computations",
+    ],
+    2: [
+      "Mathematics Two",
+      "Machines and Mechanisms A",
+      "Thermofluids A",
+      "Mechanical Design Fundamentals Studio 1",
+      "Professional Practice Preparation 1",
+      "Engineering Project Appraisal",
+      "Applied Mechanics and Design B",
+      "Mechanical Elective One",
+      "Mechanical Elective Two",
+    ],
+    3: [
+      "Dynamic Systems and Control A",
+      "Thermofluids B",
+      "Machines and Mechanisms B",
+      "Mechanical Design Fundamentals Studio 2",
+      "Designing Sustainable Engineering Projects",
+      "Mechanical Systems Design Studio 1",
+      "Engineering Work Experience",
+      "Mechanical Elective Three",
+      "Mechanical Elective Four",
+    ],
+    4: [
+      "Mechanical Systems Design Studio 2",
+      "Professional Experience Review",
+      "Dynamic Systems and Control B",
+      "Engineering Research Preparation",
+      "Professional Engineering Communication",
+      "Engineering Capstone",
+      "Design in Mechanical and Mechatronic Systems",
+      "Mechanical Elective Five",
+      "Collaboration in Complex Projects",
+    ],
+  },
+};
+const courseData = {
+  "Electrical Engineering": {
+    1: [
+      "Mathematics one",
+      "Fundamentals of C Programming",
+      "Introduction to Electrical and Electronic Engineering",
+      "Physical Modelling",
+    ],
+    1.5: [
+      "Mathematics two",
+      "Introduction to Engineering Projects",
+      "Foundations of Electrical and Electronic Technology",
+      "Electronics and Circuits",
+    ],
+    2: [
+      "Engineering Project Appraisal",
+      "Introductory Digital Systems",
+      "Introductory Embedded Systems",
+      "Signals and Systems",
+      "Professional Practice Preparation 1",
+    ],
+    2.5: [
+      "Designing Sustainable Engineering Projects",
+      "Electromechanical Automation",
+      "Circuit Analysis and Design",
+      "Control Design",
+    ],
+    3: [
+      "Professional Engineering Communication",
+      "Power Electronics",
+      "Electrical Power Systems",
+      "Electrical Engineering Elective One",
+    ],
+    3.5: [
+      "Engineering Work Experience",
+      "Professional Studio A",
+      "Collaboration in Complex Projects",
+      "Electrical Engineering Elective Two",
+      "Electrical Engineering Elective Three",
+    ],
+    4: [
+      "Professional Experience Review",
+      "Engineering Research Preparation",
+      "Professional Studio B",
+      "Electrical Engineering Elective Four",
+      "Elective One",
+    ],
+    4.5: [
+      "Engineering Capstone",
+      "Elective Two",
+      "Elective Three",
+      "Elective Four",
+    ],
+  },
+  "Software Engineering": {
+    1: [
+      "Mathematics one",
+      "Introduction to Engineering Projects",
+      "Business Requirements Modelling",
+      "Programming 1",
+    ],
+    1.5: [
+      "Mathematics two",
+      "Programming two",
+      "Systems Testing and Quality Management",
+      "Database Fundamentals",
+    ],
+    2: [
+      "Professional Practice Preparation 1",
+      "Physical Modelling",
+      "Data Structures and Algorithms",
+      "Information System Development Methodologies",
+      "Software Engineering Elective one",
+    ],
+    2.5: [
+      "Engineering Project Appraisal",
+      "Software Design Studio",
+      "Software Engineering Elective two",
+    ],
+    3: [
+      "Designing Sustainable Engineering Projects",
+      " Software Development Studio",
+      "Software Engineering Elective Three",
+    ],
+    3.5: [
+      "Engineering Work Experience",
+      "Professional Engineering Communication",
+      "Software Analysis Studio",
+      "Software Architecture",
+    ],
+    4: [
+      "Engineering Research Preparation",
+      "Collaboration in Complex Projects",
+      "Professional Experience Review",
+      "Software Engineering Elective Four",
+    ],
+    4.5: [
+      "Engineering Capstone",
+      "Software Innovation Studio",
+      "Software Engineering Elective Five",
+    ],
+  },
+  "Mechatronic Engineering": {
+    1: [
+      "Mathematics one",
+      "Introduction to Engineering Projects",
+      "Introduction to Mechanical Engineering",
+      "Physical Modelling",
+    ],
+    1.5: [
+      "Materials and Manufacturing Engineering A",
+      "Applied Mechanics and Design A",
+      "Introduction to Mechatronics Engineering",
+      "Programming 1",
+    ],
+    2: [
+      "Mathematics Two",
+      "Embedded Mechatronics Systems",
+      "Machines and Mechanisms A",
+      "Mechanical Design Fundamentals Studio 1",
+      "Professional Practice Preparation 1",
+    ],
+    2.5: [
+      "Engineering Project Appraisal",
+      "Industrial Robotics",
+      "Sensors and Control for Mechatronic Systems",
+      "Mechatronic Elective One",
+    ],
+    3: [
+      "Designing Sustainable Engineering Projects",
+      "Programming for Mechatronic Systems",
+      "Embedded Mechatronics Studio",
+      "Dynamic Systems and Control A",
+    ],
+    3.5: [
+      "Professional Engineering Communication",
+      "Robotics Studio 1",
+      "Engineering Work Experience",
+      "Mechatronic Elective Two",
+      "Mechatronic Elective Three",
+    ],
+    4: [
+      "Robotics Studio 2",
+      "Professional Experience Review",
+      "Engineering Research Preparation",
+      "Artificial Intelligence in Robotics",
+      "Mechatronic Elective Four",
+    ],
+    4.5: [
+      "Engineering Capstone",
+      "Design in Mechanical and Mechatronic System",
+      "Collaboration in Complex Projects",
+      "Software Engineering Elective Six",
+    ],
+  },
+  "Mechanical Engineering": {
+    1: [
+      "Mathematics one",
+      "Introduction to Engineering Projects",
+      " Introduction to Mechanical Engineering",
+      "Physical Modelling",
+    ],
+    1.5: [
+      "Materials and Manufacturing Engineering A",
+      "Applied Mechanics and Design A",
+      "Introduction to Mechatronics Engineering",
+      "Engineering Computations",
+    ],
+    2: [
+      "Mathematics Two",
+      "Machines and Mechanisms A",
+      "Thermofluids A",
+      "Mechanical Design Fundamentals Studio 1",
+      "Professional Practice Preparation 1",
+    ],
+    2.5: [
+      "Engineering Project Appraisal",
+      "Applied Mechanics and Design B",
+      "Mechanical Elective One",
+      "Mechanical Elective Two",
+    ],
+    3: [
+      "Dynamic Systems and Control A",
+      "Thermofluids B",
+      "Machines and Mechanisms B",
+      "Mechanical Design Fundamentals Studio 2",
+    ],
+    3.5: [
+      "Designing Sustainable Engineering Projects",
+      "Mechanical Systems Design Studio 1",
+      "Engineering Work Experience",
+      "Mechanical Elective Three",
+      "Mechanical Elective Four",
+    ],
+    4: [
+      "Mechanical Systems Design Studio 2",
+      "Professional Experience Review",
+      "Dynamic Systems and Control B",
+      "Engineering Research Preparation",
+      "Professional Engineering Communication",
+    ],
+    4.5: [
+      "Engineering Capstone",
+      "Design in Mechanical and Mechatronic Systems",
+      "Mechanical Elective Five",
+      "Collaboration in Complex Projects",
+    ],
+  },
+};
+
 function determineEngineeringType(answers) {
   let engineeringCounts = {
-    "Biomedical Engineering": 0,
-    "Civil Engineering": 0,
-    "Civil and Enviromental Engineering": 0,
-    "Data Science Engineering": 0,
+    // "Biomedical Engineering": 0,
+    // "Civil Engineering": 0,
+    // "Civil and Enviromental Engineering": 0,
+    // "Data Science Engineering": 0,
     "Electrical Engineering": 0,
-    "Electronic Engineering": 0,
+    // "Electronic Engineering": 0,
     "Mechanical Engineering": 0,
-    "Mechanical and Mechatronic Engineering": 0,
+    // "Mechanical and Mechatronic Engineering": 0,
     "Mechatronic Engineering": 0,
     "Software Engineering": 0,
-    "Electrical and Electronic Engineering": 0,
-    "Renewable Energy Engineering": 0,
-    "Chemical Process Engineering": 0,
+    // "Electrical and Electronic Engineering": 0,
+    // "Renewable Energy Engineering": 0,
+    // "Chemical Process Engineering": 0,
   };
   // Question 1
   if (
@@ -353,6 +740,35 @@ function determineEngineeringType(answers) {
   return predictedEngineering;
 }
 
+function determinYear(creditPoints) {
+  if (creditPoints >= 0 && creditPoints <= 24) {
+    return 1;
+  } else if (creditPoints >= 25 && creditPoints < 49) {
+    return 1.5;
+  } else if (creditPoints >= 49 && creditPoints < 73) {
+    return 2;
+  } else if (creditPoints >= 73 && creditPoints < 97) {
+    return 2.5;
+  } else if (creditPoints >= 97 && creditPoints < 121) {
+    return 3;
+  } else if (creditPoints >= 121 && creditPoints < 145) {
+    return 3.5;
+  } else if (creditPoints >= 145 && creditPoints < 169) {
+    return 4;
+  } else if (creditPoints >= 189 && creditPoints < 193) {
+    return 4.5;
+  }
+}
+function getCoursesForMajorAndYear(major, suggestedType, year) {
+  const majorType = major || suggestedType;
+  return courseData[majorType][year];
+}
+
+function getAllCoursesForMajorAndYear(major, suggestedType, year) {
+  const majorType = major || suggestedType;
+  return allCourseData[majorType][year];
+}
+
 function CourseMatcher() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -363,9 +779,29 @@ function CourseMatcher() {
     useState(false);
   const [answers, setAnswers] = useState({});
   const handleNavigation = () => {
+    const year = determinYear(creditPoints);
     const suggestedEngineeringType = determineEngineeringType(answers);
+    const courses = getCoursesForMajorAndYear(
+      selectedMajor,
+      suggestedEngineeringType,
+      year
+    );
+
+    const allCourses = getAllCoursesForMajorAndYear(
+      selectedMajor,
+      suggestedEngineeringType,
+      year
+    );
+
     navigate("/CourseMatcherOutput", {
-      state: { selectedMajor, creditPoints, suggestedEngineeringType },
+      state: {
+        selectedMajor,
+        creditPoints,
+        suggestedEngineeringType,
+        year,
+        courses,
+        allCourses,
+      },
     });
   };
 
@@ -419,21 +855,13 @@ function CourseMatcher() {
               label=""
               placeholder="Your Major"
               data={[
-                "Biomedical Engineering",
-                "Civil Engineering",
-                "Civil and Enviromental Engineering",
-                "Data Science Engineering",
                 "Electrical Engineering",
-                "Electronic Engineering",
                 "Mechanical Engineering",
-                "Mechanical and Mechatronic Engineering",
                 "Mechatronic Engineering",
                 "Software Engineering",
-                "Electrical and Electronic Engineering",
-                "Renewable Energy Engineering",
-                "Chemical Process Engineering",
               ]}
               className="dropdown"
+              name="major"
               onChange={(value) => setSelectedMajor(value)}
             />
             <button
@@ -455,6 +883,7 @@ function CourseMatcher() {
             <Input
               placeholder="Input component"
               onChange={(e) => setCreditPoints(e.target.value)}
+              name="creditPoints"
             />
             ;
             <button

@@ -8,25 +8,41 @@ import { useLocation } from "react-router-dom";
 function CourseMatcherOutput() {
   const handleNavigation = () => {
     navigate("/CourseMatcherOutput", {
-      state: { selectedMajor, creditPoints, suggestedEngineeringType },
+      state: {
+        selectedMajor,
+        creditPoints,
+        suggestedEngineeringType,
+        courses,
+        year,
+      },
     });
   };
   const location = useLocation();
   const [currentYear, setCurrentYear] = React.useState(1);
-  const { selectedMajor, creditPoints, suggestedEngineeringType } =
-    location.state || {};
+  const {
+    selectedMajor,
+    creditPoints,
+    suggestedEngineeringType,
+    courses,
+    year,
+  } = location.state || {};
 
-  // Function to render the desired number of cards
-  const renderCards = (count) => {
-    return (
-      <div className="card-container">
-        {Array.from({ length: count }).map((_, index) => (
-          <div key={index} className="card">
-            <CardOutput />
-          </div>
-        ))}
-      </div>
-    );
+  const renderCards = (coursesList) => {
+    // Check if coursesList is an array and has items
+    if (Array.isArray(coursesList) && coursesList.length) {
+      return (
+        <div className="card-container">
+          {coursesList.map((course, index) => (
+            <div key={index} className="card">
+              <CardOutput title={courses[index]} />
+            </div>
+          ))}
+        </div>
+      );
+    } else {
+      // If coursesList is not an array or is empty, display a message
+      return <p>No courses available.</p>;
+    }
   };
 
   return (
@@ -49,13 +65,13 @@ function CourseMatcherOutput() {
           </div>
         </div>
       </div>
-      <h2 className="year-header">Year {currentYear}</h2>
+      <h2 className="year-header">Year {year}</h2>
       {selectedMajor && creditPoints ? (
-        <>{renderCards(4)}</>
+        <>{renderCards(courses)}</>
       ) : (
         <>
-          {renderCards(4)}
-          {renderCards(4)}
+          {renderCards(courses)}
+          {/* {renderCards(courses)} */}
         </>
       )}
     </>
