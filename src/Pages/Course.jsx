@@ -15,24 +15,33 @@ function Course() {
             .catch((error) => console.error(error));
     }, [courseName]);
 
+    // Organize subjects by year
+    const subjectsByYear = {};
+    if (courseDetails.subjects) {
+        courseDetails.subjects.forEach((subject) => {
+            if (!subjectsByYear[subject.subject_year]) {
+                subjectsByYear[subject.subject_year] = [];
+            }
+            subjectsByYear[subject.subject_year].push(subject);
+        });
+    }
+
     return (
         <div>
-
-
             <h1 className="major-header">{courseName}</h1>
             <h2>Subjects:</h2>
-            <ul>
-                {courseDetails.subjects &&
-                    courseDetails.subjects.map((subject, index) => (
-                        <li key={index}>
-                            Subject Number: {subject.subject_number}, Subject Name: {subject.subject_name}, Subject Year: {subject.subject_year}
-                        </li>
-                    ))}
-            </ul>
-
-
-
-
+            {Object.keys(subjectsByYear).map((year) => (
+                <div key={year}>
+                    <h3>Year {year}</h3>
+                    <ul>
+                        {subjectsByYear[year].map((subject) => (
+                            <li key={subject.subject_number}>
+                                Subject Number: {subject.subject_number}, Subject Name: {subject.subject_name}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
     );
 }
