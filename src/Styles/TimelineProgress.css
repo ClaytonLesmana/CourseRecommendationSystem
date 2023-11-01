@@ -4,7 +4,7 @@
   align-items: center;
 }
 .ProgressRoot{
-  width: 1200px;
+  width: 1200px; /**/
   position: absolute;
   /* align-items: center; */
   margin-top: 100px;
@@ -23,8 +23,8 @@
   background-color: blue;
   display: flex;
   position: absolute;
-  margin-top: 100px;
-  margin-right: 1200px;
+  margin-top: 100px;  
+  margin-right: 1240px; /* 100 */
   align-items: center;
   justify-content: center;
   color: white;
@@ -38,7 +38,7 @@
   background-color: blue;
   position: absolute;
   margin-top: 100px;
-  margin-right: 400px;
+  margin-right: 400px; /* 400 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,7 +53,7 @@
   background-color: blue;
   position: absolute;
   margin-top: 100px;
-  margin-right: -400px;
+  margin-right: -400px; /* -400 */
   display: flex;
   align-items: center;
   justify-content: center;
