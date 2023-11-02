@@ -392,21 +392,47 @@ const courseData = {
   },
 };
 
+
+
+function determinYear(creditPoints) {
+  if (creditPoints >= 0 && creditPoints <= 24) {
+    return 1;
+  } else if (creditPoints >= 25 && creditPoints < 49) {
+    return 1.5;
+  } else if (creditPoints >= 49 && creditPoints < 73) {
+    return 2;
+  } else if (creditPoints >= 73 && creditPoints < 97) {
+    return 2.5;
+  } else if (creditPoints >= 97 && creditPoints < 121) {
+    return 3;
+  } else if (creditPoints >= 121 && creditPoints < 145) {
+    return 3.5;
+  } else if (creditPoints >= 145 && creditPoints < 169) {
+    return 4;
+  } else if (creditPoints >= 189 && creditPoints < 193) {
+    return 4.5;
+  }
+}
+function getCoursesForMajorAndYear(major, suggestedType, year) {
+  const majorType = major || suggestedType;
+  return courseData[majorType][year];
+}
+
 function determineEngineeringType(answers) {
   let engineeringCounts = {
-    // "Biomedical Engineering": 0,
-    // "Civil Engineering": 0,
-    // "Civil and Enviromental Engineering": 0,
-    // "Data Science Engineering": 0,
+    "Biomedical Engineering": 0,
+    "Civil Engineering": 0,
+    "Civil and Enviromental Engineering": 0,
+    "Data Science Engineering": 0,
     "Electrical Engineering": 0,
-    // "Electronic Engineering": 0,
+    "Electronic Engineering": 0,
     "Mechanical Engineering": 0,
-    // "Mechanical and Mechatronic Engineering": 0,
+    "Mechanical and Mechatronic Engineering": 0,
     "Mechatronic Engineering": 0,
     "Software Engineering": 0,
-    // "Electrical and Electronic Engineering": 0,
-    // "Renewable Energy Engineering": 0,
-    // "Chemical Process Engineering": 0,
+    "Electrical and Electronic Engineering": 0,
+    "Renewable Energy Engineering": 0,
+    "Chemical Process Engineering": 0,
   };
   // Question 1
   if (
@@ -739,30 +765,6 @@ function determineEngineeringType(answers) {
   return predictedEngineering;
 }
 
-function determinYear(creditPoints) {
-  if (creditPoints >= 0 && creditPoints <= 24) {
-    return 1;
-  } else if (creditPoints >= 25 && creditPoints < 49) {
-    return 1.5;
-  } else if (creditPoints >= 49 && creditPoints < 73) {
-    return 2;
-  } else if (creditPoints >= 73 && creditPoints < 97) {
-    return 2.5;
-  } else if (creditPoints >= 97 && creditPoints < 121) {
-    return 3;
-  } else if (creditPoints >= 121 && creditPoints < 145) {
-    return 3.5;
-  } else if (creditPoints >= 145 && creditPoints < 169) {
-    return 4;
-  } else if (creditPoints >= 189 && creditPoints < 193) {
-    return 4.5;
-  }
-}
-function getCoursesForMajorAndYear(major, suggestedType, year) {
-  const majorType = major || suggestedType;
-  return courseData[majorType][year];
-}
-
 function CourseMatcher() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
@@ -773,6 +775,7 @@ function CourseMatcher() {
     useState(false);
   const [answers, setAnswers] = useState({});
   const handleNavigation = () => {
+
     const year = determinYear(creditPoints);
     const year2 = 0;
     const suggestedEngineeringType = determineEngineeringType(answers);
@@ -796,6 +799,8 @@ function CourseMatcher() {
         courses,
         // allCourses,
       },
+
+      
     });
   };
 
@@ -853,6 +858,11 @@ function CourseMatcher() {
                 "Mechanical Engineering",
                 "Mechatronic Engineering",
                 "Software Engineering",
+
+                "Electrical and Electronic Engineering",
+                "Renewable Energy Engineering",
+                "Chemical Process Engineering",
+
               ]}
               className="dropdown"
               name="major"
