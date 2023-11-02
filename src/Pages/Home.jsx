@@ -1,13 +1,16 @@
-// Home.js
+
+
 import React, { useState, useEffect } from 'react';
-import '../styles/Home.css'; // Adjust the import path
+import '../Styles/Home.css'; // Adjust the import path
+
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     { title: 'Course Matcher', description: 'Take the questionnare to determine which course would best suit your preferences' },
     { title: 'Course', description: 'See which courses are avialable withing different universites to see what could be your future career' },
-    // Add more slides as needed
+    { title: 'Contact', description: 'Contact us for any questions or inquiries' }
+
   ];
 
   const slideCount = slides.length;
