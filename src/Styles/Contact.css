@@ -1,0 +1,124 @@
+
+
+.contact-container {
+    padding: 30px; /* Increase the padding for more space inside the container */
+    text-align: left;
+    background-color: #fff;
+    color: #000;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Increase spacing between elements */
+  .contact-container h1,
+  .contact-container p {
+    margin-bottom: 20px; /* Add margin between the title and the paragraph */
+  }
+  
+  /* Display form elements in a row */
+  .form-group {
+    margin-bottom: 20px; /* Add margin between form groups */
+    display: flex; /* Use flexbox to display elements in a row */
+    align-items: center; /* Center elements vertically */
+  }
+  
+  .form-group label {
+    flex: 0 0 100px; /* Fixed width for labels */
+    margin-right: 10px; /* Add spacing between labels and input fields */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    flex: 1; /* Let input fields expand to fill the available space */
+  }
+  
+  /* Increase space between the button and the form */
+  #contact-form button {
+    margin-top: 20px;
+  }
+  
+  .active {
+    color: var(--secondaryColor);
+  }
+=======
+.card{
+    width: 500px;
+    height: 500px;
+}
+.ContactUs-container {
+    display: flex;
+    height: 92vh;  /* This ensures the container takes up the full height of the viewport */
+    width: 100%;   /* This ensures the container takes up the full width of the viewport */
+    overflow: hidden; /* Prevents any overflow from child elements */
+    background-color: #ff8800;  /* Light pink color for answers section */
+}
+.title{
+    color: #ffffff;
+}
+.Textarea textarea{
+    height: 200px;  /* Adjust this value based on your preferred height */
+  }
+ 
+/* .contactUs-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fFCD80;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #ffffff;
+    padding: 3.5rem 4rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 20px;
+ 
+    text-align: center;
+} */
+.contactUs-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* or any height you prefer */
+}
+ 
+.cards-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #ff8800;  /* Light pink color for answers section */
+    overflow-y: auto;  /* Allows scrolling if content exceeds the height */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    position: relative;
+    padding: 3.5rem 40rem;
+    /* text-align: center; */
+    flex-direction: column; /* Stack children vertically */
+    gap: 20px; /* Add some gap between buttons */
+}
+ 
+/* ... previous styles ... */
+ 
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    margin-bottom: 1rem; /* Adjust spacing as needed */
+}
+ 
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    gap: 1rem; /* Adjust spacing between items */
+}
+ 
+.social-icons {
+    margin-top: 2rem; /* Adjust spacing as needed */
+    color: #ffffff;
+}
+
