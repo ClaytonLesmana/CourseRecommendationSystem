@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import "../Styles/courseOutput.css";
-
+import CardOutput from '../Components/CardOutput';
+import TimelineProgress from '../Components/TimelineProgress';
 
 function Course() {
     const { courseName } = useParams();
     const [courseDetails, setCourseDetails] = useState({});
+    const [selectedYear, setSelectedYear] = useState(1);
 
     useEffect(() => {
         // Fetch course details based on the courseName from the URL
@@ -29,17 +31,22 @@ function Course() {
     return (
         <div>
             <h1 className="major-header">{courseName}</h1>
-            <h2>Subjects:</h2>
+
+            <TimelineProgress creditPoints={0} setYear={setSelectedYear} />
+
             {Object.keys(subjectsByYear).map((year) => (
                 <div key={year}>
-                    <h3>Year {year}</h3>
-                    <ul>
-                        {subjectsByYear[year].map((subject) => (
-                            <li key={subject.subject_number}>
-                                Subject Number: {subject.subject_number}, Subject Name: {subject.subject_name}
-                            </li>
-                        ))}
-                    </ul>
+                    {parseInt(year) === selectedYear && (
+                        <div>
+                            <div style={{ marginTop: '120px' }}>
+                                <h2>Year {year} Subjects:</h2>
+                                {subjectsByYear[year].map((subject, index) => (
+                                    <CardOutput key={index} title={subject.subject_name} />
+                                ))}
+
+                            </div>
+                        </div>
+                    )}
                 </div>
             ))}
         </div>
