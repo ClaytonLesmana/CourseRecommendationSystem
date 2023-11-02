@@ -185,6 +185,7 @@ const allCourseData = {
 function CourseMatcherOutput() {
   const handleNavigation = () => {
     navigate("/CourseMatcherOutput", {
+
       state: {
         selectedMajor,
         creditPoints,
@@ -193,10 +194,12 @@ function CourseMatcherOutput() {
         // allCourses,
         year,
       },
+
     });
   };
   const location = useLocation();
   const [currentYear, setCurrentYear] = React.useState(1);
+
   const {
     selectedMajor,
     creditPoints,
@@ -243,6 +246,7 @@ function CourseMatcherOutput() {
                 <CardOutput title={course} />
               </div>
             ))}
+
           </div>
           {secondRowCourses.length > 0 && (
             <div className="card-container second-row">
@@ -280,6 +284,8 @@ function CourseMatcherOutput() {
   };
 
   return (
+
+    
       <>
         <div className="output-container">
           <div className="progress-bar-placeholder">
@@ -293,6 +299,7 @@ function CourseMatcherOutput() {
               <h5 className="progress-label-2">Advance Topics</h5>
               <h5 className="progress-label-3">Mastery</h5>
             </div>
+
           </div>
         </div>
         {selectedMajor && creditPoints ? (

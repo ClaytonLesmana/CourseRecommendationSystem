@@ -1,0 +1,42 @@
+
+.contact-container {
+    padding: 30px; /* Increase the padding for more space inside the container */
+    text-align: left;
+    background-color: #fff;
+    color: #000;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Increase spacing between elements */
+  .contact-container h1,
+  .contact-container p {
+    margin-bottom: 20px; /* Add margin between the title and the paragraph */
+  }
+  
+  /* Display form elements in a row */
+  .form-group {
+    margin-bottom: 20px; /* Add margin between form groups */
+    display: flex; /* Use flexbox to display elements in a row */
+    align-items: center; /* Center elements vertically */
+  }
+  
+  .form-group label {
+    flex: 0 0 100px; /* Fixed width for labels */
+    margin-right: 10px; /* Add spacing between labels and input fields */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    flex: 1; /* Let input fields expand to fill the available space */
+  }
+  
+  /* Increase space between the button and the form */
+  #contact-form button {
+    margin-top: 20px;
+  }
+  
+  .active {
+    color: var(--secondaryColor);
+  }
