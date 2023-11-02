@@ -13,17 +13,18 @@ function Courses() {
     }, []);
 
     return (
-        <div className="courses-container">
-            <h1 className="courses-header">Course List</h1>
-            <ul className="courses-list">
+        <div>
+        <h1 className={"courses-header"}>Courses</h1>
+        <div className="course-grid-container">
                 {courses.map((course) => (
-                    <li key={course.course_num} className="course-item">
-                        <Link to={`/course/${course.course_name}`} className="course-link">
+                    <div key={course.course_num} className="course-card">
+                        <Link to={`/course/${course.course_name}`} >
                             {course.course_name}
                         </Link>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+
+        </div>
         </div>
     );
 }

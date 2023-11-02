@@ -25,7 +25,7 @@ function Home() {
 
   useEffect(() => {
     // Automatically change the slide every 7 seconds
-    const intervalId = setInterval(goToNextSlide, 7000);
+    const intervalId = setInterval(goToNextSlide, 4000);
 
     return () => {
       clearInterval(intervalId); // Clear the interval when the component unmounts

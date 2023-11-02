@@ -32,7 +32,7 @@
     flex: 1; /* Each label takes up equal space */
     text-align: center; /* Centers the text within each label */
     font-weight: 550;
-    color: ;
+    color: red;
 }
   .major-header{
     margin-left: 110px;

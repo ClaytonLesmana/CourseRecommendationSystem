@@ -173,35 +173,35 @@ INSERT INTO course VALUES (030012, 'Civil and Environmental Engineering', 300000
 --
 
 -- Course Name: Electrical, Code: 030013
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 33130, 'Mathematics 1');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48430, 'Fundamentals of C Programming');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48510, 'Introduction to Electrical and Electronic Engineering');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 68037, 'Physical Modelling');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 33230, 'Mathematics 2');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48230, 'Introduction to Engineering Projects');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48521, 'Foundations of Electrical and Electronic Technology');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48520, 'Electronics and Circuits');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41200, 'Engineering Project Appraisal');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48441, 'Introductory Digital Systems');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48434, 'Introductory Embedded Systems');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48540, 'Signals and Systems');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41035, 'Professional Practice Preparation 1');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41201, 'Designing Sustainable Engineering Projects');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48531, 'Electromechanical Automation');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48530, 'Circuit Analysis and Design');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41277, 'Control Design');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41202, 'Professional Engineering Communication');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41278, 'Power Electronics');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 48572, 'Electrical Power Systems');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 91781, 'Electrical Engineering options');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41028, 'Engineering Work Experience');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41088, 'Professional Studio A');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41203, 'Collaboration in Complex Projects');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41055, 'Professional Experience Review');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41029, 'Engineering Research Preparation');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41089, 'Professional Studio B');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 41030, 'Engineering Capstone');
-INSERT INTO course VALUES (030013, 'Electrical', 300000, 90011, 'Electives');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 33130, 'Mathematics 1');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48430, 'Fundamentals of C Programming');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48510, 'Introduction to Electrical and Electronic Engineering');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 68037, 'Physical Modelling');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 33230, 'Mathematics 2');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48230, 'Introduction to Engineering Projects');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48521, 'Foundations of Electrical and Electronic Technology');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48520, 'Electronics and Circuits');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41200, 'Engineering Project Appraisal');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48441, 'Introductory Digital Systems');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48434, 'Introductory Embedded Systems');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48540, 'Signals and Systems');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41035, 'Professional Practice Preparation 1');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41201, 'Designing Sustainable Engineering Projects');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48531, 'Electromechanical Automation');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48530, 'Circuit Analysis and Design');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41277, 'Control Design');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41202, 'Professional Engineering Communication');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41278, 'Power Electronics');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 48572, 'Electrical Power Systems');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 91781, 'Electrical Engineering options');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41028, 'Engineering Work Experience');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41088, 'Professional Studio A');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41203, 'Collaboration in Complex Projects');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41055, 'Professional Experience Review');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41029, 'Engineering Research Preparation');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41089, 'Professional Studio B');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 41030, 'Engineering Capstone');
+INSERT INTO course VALUES (030013, 'Electrical Engineering', 300000, 90011, 'Electives');
 
 
 --

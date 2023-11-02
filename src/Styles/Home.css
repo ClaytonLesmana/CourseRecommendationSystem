@@ -1,7 +1,7 @@
 /* Home.css */
 .home-container {
     text-align: center;
-    background-color: var(--mainColor);
+  background-color: #ff8800;
     color: var(--textColor);
     padding: 2rem;
   }
@@ -21,7 +21,7 @@
     width: 300px; /* Adjust the card width as needed */
     margin: 4rem auto; /* Increase the margin-top to move the slideshow lower */
     padding: 1rem;
-    border: 1px solid #ccc; /* Add a border around the card */
+    border: 1px solid #000000; /* Add a border around the card */
     text-align: center;
     transition: transform 0.5s ease;
 }
