@@ -12,21 +12,17 @@
     height: auto;
 }
 
-<<<<<<< HEAD
 .demoOutput-img{
 	width: auto;
 	height: 923.45px;
 }
 
-=======
->>>>>>> personal-repo/main
 :root {
 	--mainColor: #fff;
 	--secondaryColor: #ff8a00;
 	--textColor: #000;
 }
 
-<<<<<<< HEAD
 body{
 	padding-top: 80px; 
 }
@@ -39,11 +35,6 @@ header {
 	z-index: 1000;
 	top: 0;
     left: 0;
-=======
-header {
-	display: flex;
-	align-items: center;
->>>>>>> personal-repo/main
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
@@ -80,7 +71,6 @@ nav {
 	display: flex;
 	align-items: center;
 }
-<<<<<<< HEAD
 .question-text{
 	font-weight: 700;
     line-height: 1.2;
@@ -229,8 +219,6 @@ nav {
 	font-size
 } */
 
-=======
->>>>>>> personal-repo/main
 
 @media only screen and (max-width: 1200px) {
 	header .nav-btn {
@@ -266,8 +254,4 @@ nav {
 	nav a {
 		font-size: 1.5rem;
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> personal-repo/main
 }
